@@ -1,1 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>GURU AI - SWITY Assistant</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="app-container">
+        <header class="top-branding">
+            <div class="company-tag">GURUKRUPATECH</div>
+            <h1 class="assistant-title">SWITY <span class="sub-title">GURU AI</span></h1>
+            <div class="admin-badge">SYSTEM ADMIN: TRADER SHIV</div>
+        </header>
+
+        <section class="avatar-section">
+            <div class="avatar-container">
+                <div class="neon-ring ring-outer"></div>
+                <div class="neon-ring ring-inner"></div>
+                <div class="avatar-core">
+                    <div class="avatar-eye left"></div>
+                    <div class="avatar-eye right"></div>
+                    <div class="avatar-pulse"></div>
+                </div>
+            </div>
+            <div class="status-indicator">
+                <span class="status-dot"></span>
+                <span id="statusText" class="status-text">SYSTEM ONLINE</span>
+            </div>
+        </section>
+
+        <section class="chat-section">
+            <div id="chatBox" class="chat-box">
+                <div class="message ai-message">
+                    <span class="sender-tag">SWITY:</span>
+                    <p class="message-text">Hello Boss. Welcome back. I'm Swity, your personal AI assistant.</p>
+                </div>
+            </div>
+            
+            <div id="typingIndicator" class="typing-indicator hidden">
+                <span></span><span></span><span></span>
+            </div>
+        </section>
+
+        <footer class="control-section">
+            <div class="chat-input-wrapper">
+                <input type="text" id="userInput" placeholder="Command Swity..." autocomplete="off">
+                <button id="sendBtn" class="send-btn" aria-label="Send Message">
+                    <svg viewBox="0 0 24 24" width="20" height="20">
+                        <path fill="currentColor" d="M2,21L23,12L2,3V10L17,12L2,14V21Z"/>
+                    </svg>
+                </button>
+            </div>
+            
+            <div class="control-bar">
+                <button id="micBtn" class="ctrl-btn" aria-label="Microphone">
+                    <svg viewBox="0 0 24 24" class="btn-icon">
+                        <path fill="currentColor" d="M12,2A3,3 0 0,1 15,5V11A3,3 0 0,1 12,14A3,3 0 0,1 9,11V5A3,3 0 0,1 12,2M19,11C19,14.53 16.39,17.44 13,17.93V21H11V17.93C7.61,17.44 5,14.53 5,11H7A5,5 0 0,0 12,16A5,5 0 0,0 17,11H19Z"/>
+                    </svg>
+                    <span>MIC</span>
+                </button>
+
+                <button id="settingsBtn" class="ctrl-btn" aria-label="Settings">
+                    <svg viewBox="0 0 24 24" class="btn-icon">
+                        <path fill="currentColor" d="M12,15.5A3.5,3.5 0 0,1 8.5,12A3.5,3.5 0 0,1 12,8.5A3.5,3.5 0 0,1 15.5,12A3.5,3.5 0 0,1 12,15.5M19.43,12.97C19.47,12.65 19.5,12.33 19.5,12C19.5,11.67 19.47,11.34 19.43,11L21.54,9.37C21.73,9.22 21.78,8.95 21.66,8.73L19.66,5.27C19.54,5.05 19.27,4.96 19.05,5.05L16.56,6.05C16.04,5.66 15.5,5.32 14.87,5.07L14.49,2.42C14.46,2.18 14.25,2 14,2H10C9.75,2 9.54,2.18 9.51,2.42L9.13,5.07C8.5,5.32 7.96,5.66 7.44,6.05L4.95,5.05C4.73,4.96 4.46,5.05 4.34,5.27L2.34,8.73C2.21,8.95 2.27,9.22 2.46,9.37L4.57,11C4.53,11.34 4.5,11.67 4.5,12C4.5,12.33 4.53,12.65 4.57,12.97L2.46,14.63C2.27,14.78 2.21,15.05 2.34,15.27L4.34,18.73C4.46,18.95 4.73,19.03 4.95,18.95L7.44,17.94C7.96,18.34 8.5,18.68 9.13,18.93L9.51,21.58C9.54,21.82 9.75,22 10,22H14C14.25,22 14.46,21.82 14.49,21.58L14.87,18.93C15.5,18.68 16.04,18.34 16.56,17.94L19.05,18.95C19.27,19.03 19.54,18.95 19.66,18.73L21.66,15.27C21.78,15.05 21.73,14.78 21.54,14.63L19.43,12.97Z"/>
+                    </svg>
+                    <span>SETTINGS</span>
+                </button>
+
+                <button id="voiceBtn" class="ctrl-btn" aria-label="Toggle Voice Output">
+                    <svg viewBox="0 0 24 24" class="btn-icon">
+                        <path fill="currentColor" d="M14,3.23V5.29C16.89,6.15 19,8.83 19,12C19,15.17 16.89,17.84 14,18.7LeaveV20.77C18,19.86 21,16.28 21,12C21,7.72 18,4.14 14,3.23M16.5,12C16.5,10.23 15.5,8.71 14,7.97V16.02C15.5,15.29 16.5,13.76 16.5,12M3,9V15H7L12,20V4L7,9H3Z"/>
+                    </svg>
+                    <span id="voiceBtnText">VOICE ON</span>
+                </button>
+            </div>
+        </footer>
+
+        <div id="settingsModal" class="modal-overlay hidden">
+            <div class="modal-content glass-card">
+                <div class="modal-header">
+                    <h2>SYSTEM CONFIG</h2>
+                    <button id="closeModalBtn" class="close-btn">&times;</button>
+                </div>
+                
+                <div class="modal-body">
+                    <div class="setting-group">
+                        <label for="voiceSelect">ASSISTANT VOICE</label>
+                        <select id="voiceSelect" class="cyber-select">
+                            <option value="">Loading system voices...</option>
+                        </select>
+                    </div>
+
+                    <div class="setting-group">
+                        <label for="langSelect">LANGUAGE</label>
+                        <select id="langSelect" class="cyber-select">
+                            <option value="en-US">English (US)</option>
+                            <option value="en-IN">English (India)</option>
+                            <option value="hi-IN">Hindi (India)</option>
+                        </select>
+                    </div>
+
+                    <div class="setting-group">
+                        <div class="slider-label">
+                            <label for="volumeSlider">AUDIO VOLUME</label>
+                            <span id="volumeVal" class="slider-val">100%</span>
+                        </div>
+                        <input type="range" id="volumeSlider" class="cyber-slider" min="0" max="1" step="0.1" value="1">
+                    </div>
+
+                    <div class="setting-group">
+                        <div class="slider-label">
+                            <label for="rateSlider">SPEECH RATE</label>
+                            <span id="rateVal" class="slider-val">1.0x</span>
+                        </div>
+                        <input type="range" id="rateSlider" class="cyber-slider" min="0.5" max="1.5" step="0.1" value="1">
+                    </div>
+
+                    <div class="setting-group toggle-group">
+                        <label for="animToggle">NEON ANIMATIONS</label>
+                        <label class="switch">
+                            <input type="checkbox" id="animToggle" checked>
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
 
