@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 
 <meta name="viewport"
@@ -10,9 +11,9 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable
 
 <style>
 
-/* ===============================
+/* =================================
    RESET
-================================ */
+================================= */
 
 *{
     margin:0;
@@ -23,25 +24,25 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable
 html,
 body{
     width:100%;
-    min-height:100%;
+    height:100%;
     background:#020609;
 }
 
 body{
-    font-family:Arial,sans-serif;
-    overflow:hidden;
+    font-family:Arial, sans-serif;
     color:white;
+    overflow:hidden;
 }
 
 
-/* ===============================
+/* =================================
    MAIN APP
-================================ */
+================================= */
 
 .swity-app{
     width:100%;
     height:100vh;
-    min-height:100svh;
+    height:100svh;
 
     display:flex;
     justify-content:center;
@@ -51,16 +52,16 @@ body{
 }
 
 
-/* ===============================
-   BACKGROUND CONTAINER
-================================ */
+/* =================================
+   MAIN CONTAINER
+================================= */
 
 .background-container{
     position:relative;
 
     width:100%;
     height:100vh;
-    min-height:100svh;
+    height:100svh;
 
     max-width:600px;
 
@@ -69,13 +70,13 @@ body{
     background:#020609;
 
     box-shadow:
-    0 0 40px rgba(0,242,254,.18);
+    0 0 40px rgba(0,242,254,.15);
 }
 
 
-/* ===============================
+/* =================================
    BACKGROUND IMAGE
-================================ */
+================================= */
 
 .background-image{
     position:absolute;
@@ -86,27 +87,47 @@ body{
     height:100%;
 
     object-fit:cover;
-    object-position:center top;
-
-    display:block;
-
-    user-select:none;
+    object-position:center;
 
     pointer-events:none;
+    user-select:none;
 
     z-index:1;
 }
 
 
-/* ===============================
-   ANIMATED CYBER LIGHT
-================================ */
+/* =================================
+   DARK OVERLAY
+================================= */
+
+.background-overlay{
+    position:absolute;
+
+    inset:0;
+
+    background:
+    linear-gradient(
+        to bottom,
+        rgba(0,3,8,.25),
+        rgba(0,3,8,.08) 45%,
+        rgba(0,3,8,.55) 100%
+    );
+
+    z-index:2;
+
+    pointer-events:none;
+}
+
+
+/* =================================
+   CYBER LIGHT
+================================= */
 
 .cyber-light{
     position:absolute;
     inset:0;
 
-    z-index:5;
+    z-index:3;
 
     pointer-events:none;
 
@@ -130,9 +151,9 @@ body{
     linear-gradient(
         90deg,
         transparent,
-        rgba(0,242,254,.05),
-        rgba(0,255,180,.18),
-        rgba(0,242,254,.05),
+        rgba(0,242,254,.04),
+        rgba(0,255,180,.16),
+        rgba(0,242,254,.04),
         transparent
     );
 
@@ -140,31 +161,7 @@ body{
 
     filter:blur(12px);
 
-    animation:lightMove 8s linear infinite;
-}
-
-.cyber-light::after{
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    background:
-
-    radial-gradient(
-        circle at 50% 30%,
-        rgba(0,242,254,.10),
-        transparent 25%
-    ),
-
-    radial-gradient(
-        circle at 50% 80%,
-        rgba(0,255,120,.08),
-        transparent 28%
-    );
-
-    animation:pulseLight 4s ease-in-out infinite alternate;
+    animation:lightMove 9s linear infinite;
 }
 
 @keyframes lightMove{
@@ -179,29 +176,17 @@ body{
 
 }
 
-@keyframes pulseLight{
 
-    from{
-        opacity:.25;
-    }
-
-    to{
-        opacity:.85;
-    }
-
-}
-
-
-/* ===============================
+/* =================================
    PARTICLES
-================================ */
+================================= */
 
 .particles{
     position:absolute;
 
     inset:0;
 
-    z-index:6;
+    z-index:4;
 
     pointer-events:none;
 
@@ -233,120 +218,262 @@ body{
     }
 
     15%{
-        opacity:.8;
+        opacity:.7;
     }
 
     85%{
-        opacity:.8;
+        opacity:.7;
     }
 
     100%{
-        transform:translateY(-350px) scale(1.4);
+        transform:translateY(-350px) scale(1.3);
         opacity:0;
     }
 
 }
 
 
-/* ===============================
-   CHAT MESSAGE
-================================ */
+/* =================================
+   TOP BRAND
+================================= */
 
-#chatMessage{
+.top-brand{
+
     position:absolute;
 
-    left:18%;
-    top:48%;
+    top:max(18px, env(safe-area-inset-top));
 
-    width:64%;
-    height:7%;
+    left:50%;
 
-    overflow-y:auto;
+    transform:translateX(-50%);
 
-    padding:5px 8px;
-
-    color:white;
-
-    font-size:clamp(12px,3vw,17px);
-
-    line-height:1.25;
-
-    text-shadow:
-    0 0 8px rgba(0,242,254,.4);
+    display:flex;
+    align-items:center;
+    gap:9px;
 
     z-index:20;
 
     pointer-events:none;
 }
 
+.brand-logo{
 
-/* ===============================
-   ALL INTERACTIVE ELEMENTS
-================================ */
+    width:38px;
+    height:38px;
 
-.menu-button,
-.settings-button,
-.chat-input,
-.send-button,
-.mic-button,
-.control-settings,
-.voice-button{
+    border-radius:50%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:19px;
+
+    color:#00f2fe;
+
+    border:1px solid rgba(0,242,254,.55);
+
+    background:rgba(0,10,15,.45);
+
+    box-shadow:
+    0 0 12px rgba(0,242,254,.35),
+    inset 0 0 10px rgba(0,242,254,.12);
+
+    backdrop-filter:blur(8px);
+}
+
+.brand-text{
+
+    display:flex;
+    flex-direction:column;
+}
+
+.brand-title{
+
+    font-size:14px;
+
+    letter-spacing:2px;
+
+    font-weight:bold;
+
+    color:#ffffff;
+
+    text-shadow:
+    0 0 10px rgba(0,242,254,.7);
+}
+
+.brand-subtitle{
+
+    margin-top:2px;
+
+    font-size:8px;
+
+    letter-spacing:2px;
+
+    color:#00f2fe;
+
+    opacity:.9;
+}
+
+
+/* =================================
+   CHAT AREA
+================================= */
+
+.chat-area{
+
     position:absolute;
 
-    z-index:30;
+    left:0;
+    right:0;
+
+    top:46%;
+
+    padding:0 20px;
+
+    z-index:15;
+
+    pointer-events:none;
+}
+
+.chat-message{
+
+    max-width:82%;
+
+    margin:auto;
+
+    padding:14px 16px;
+
+    border-radius:16px;
+
+    background:
+    linear-gradient(
+        135deg,
+        rgba(0,15,22,.50),
+        rgba(0,5,12,.30)
+    );
+
+    border:1px solid rgba(0,242,254,.18);
+
+    backdrop-filter:blur(7px);
+
+    color:#ffffff;
+
+    font-size:clamp(14px,4vw,18px);
+
+    line-height:1.45;
+
+    text-align:center;
+
+    text-shadow:
+    0 0 8px rgba(0,242,254,.35);
+
+    box-shadow:
+    0 0 20px rgba(0,242,254,.08);
+
+    transition:.3s;
 }
 
 
-/* ===============================
-   MENU BUTTON
-================================ */
+/* =================================
+   BOTTOM CHAT BAR
+================================= */
 
-.menu-button{
-    top:2%;
-    left:2%;
+.chat-bar-wrapper{
 
-    width:12%;
-    height:7%;
+    position:absolute;
 
-    border:none;
+    left:0;
+    right:0;
 
-    background:transparent;
+    bottom:max(16px, env(safe-area-inset-bottom));
 
-    cursor:pointer;
+    padding:0 10px;
+
+    z-index:50;
+}
+
+.chat-bar{
+
+    width:100%;
+
+    min-height:58px;
+
+    display:flex;
+    align-items:center;
+
+    gap:7px;
+
+    padding:6px;
+
+    border-radius:18px;
+
+    background:
+    rgba(3,13,20,.82);
+
+    border:
+    1px solid rgba(0,242,254,.32);
+
+    backdrop-filter:blur(15px);
+
+    box-shadow:
+    0 0 25px rgba(0,242,254,.12),
+    inset 0 0 12px rgba(0,242,254,.04);
 }
 
 
-/* ===============================
-   TOP SETTINGS
-================================ */
+/* =================================
+   SETTINGS BUTTON LEFT
+================================= */
 
 .settings-button{
-    top:2%;
-    right:2%;
 
-    width:12%;
-    height:7%;
+    flex-shrink:0;
+
+    width:45px;
+    height:45px;
 
     border:none;
 
-    background:transparent;
+    border-radius:13px;
+
+    background:
+    rgba(0,242,254,.08);
+
+    color:#00f2fe;
+
+    font-size:21px;
 
     cursor:pointer;
+
+    transition:.2s;
+
+    border:
+    1px solid rgba(0,242,254,.18);
+}
+
+.settings-button:active{
+
+    transform:scale(.92);
+
+    background:
+    rgba(0,242,254,.18);
 }
 
 
-/* ===============================
-   CHAT INPUT
-================================ */
+/* =================================
+   INPUT
+================================= */
 
 .chat-input{
-    left:18%;
-    top:56.3%;
 
-    width:54%;
-    height:4.8%;
+    flex:1;
 
-    padding:6px 8px;
+    min-width:0;
+
+    height:45px;
+
+    padding:0 8px;
 
     border:none;
     outline:none;
@@ -355,126 +482,439 @@ body{
 
     color:white;
 
-    font-family:Arial,sans-serif;
+    font-family:Arial, sans-serif;
 
-    font-size:clamp(12px,3vw,18px);
+    font-size:15px;
 }
 
 .chat-input::placeholder{
-    color:rgba(255,255,255,.55);
+
+    color:
+    rgba(255,255,255,.52);
 }
 
 
-/* ===============================
-   SEND BUTTON
-================================ */
+/* =================================
+   MIC BUTTON
+================================= */
 
-.send-button{
-    top:56.2%;
-    left:73%;
+.mic-button{
 
-    width:11%;
-    height:5.5%;
+    flex-shrink:0;
+
+    width:45px;
+    height:45px;
 
     border:none;
 
-    background:transparent;
+    border-radius:13px;
+
+    background:
+    rgba(0,242,254,.08);
+
+    color:#00f2fe;
+
+    font-size:19px;
 
     cursor:pointer;
 
-    border-radius:15px;
+    transition:.2s;
+
+    border:
+    1px solid rgba(0,242,254,.18);
+}
+
+.mic-button.listening{
+
+    animation:micPulse 1s infinite;
+
+    color:#00ff88;
+}
+
+@keyframes micPulse{
+
+    0%{
+        box-shadow:0 0 0 rgba(0,255,136,.0);
+    }
+
+    50%{
+        box-shadow:0 0 20px rgba(0,255,136,.65);
+    }
+
+    100%{
+        box-shadow:0 0 0 rgba(0,255,136,.0);
+    }
+
+}
+
+.mic-button:active{
+
+    transform:scale(.92);
+}
+
+
+/* =================================
+   SEND BUTTON
+================================= */
+
+.send-button{
+
+    flex-shrink:0;
+
+    width:45px;
+    height:45px;
+
+    border:none;
+
+    border-radius:13px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #00c6d7,
+        #00f2fe
+    );
+
+    color:#001014;
+
+    font-size:20px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.2s;
+
+    box-shadow:
+    0 0 15px rgba(0,242,254,.35);
 }
 
 .send-button:active{
+
     transform:scale(.90);
 }
 
 
-/* ===============================
-   MIC BUTTON
-================================ */
+/* =================================
+   SETTINGS PANEL
+================================= */
 
-.mic-button{
-    left:17%;
-    top:62.5%;
+.settings-overlay{
 
-    width:21%;
-    height:5.5%;
+    position:absolute;
+
+    inset:0;
+
+    background:
+    rgba(0,0,0,.62);
+
+    backdrop-filter:blur(5px);
+
+    z-index:90;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.25s;
+}
+
+.settings-overlay.active{
+
+    opacity:1;
+
+    visibility:visible;
+}
+
+
+.settings-panel{
+
+    position:absolute;
+
+    left:0;
+    bottom:0;
+
+    width:100%;
+
+    padding:
+    20px 18px
+    max(25px, env(safe-area-inset-bottom));
+
+    background:
+    linear-gradient(
+        180deg,
+        rgba(5,18,27,.98),
+        rgba(1,7,12,.99)
+    );
+
+    border-top:
+    1px solid rgba(0,242,254,.35);
+
+    border-radius:
+    24px 24px 0 0;
+
+    transform:
+    translateY(105%);
+
+    transition:.35s ease;
+
+    box-shadow:
+    0 -10px 35px rgba(0,242,254,.12);
+}
+
+.settings-overlay.active
+.settings-panel{
+
+    transform:
+    translateY(0);
+}
+
+
+.settings-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:18px;
+}
+
+.settings-title{
+
+    color:#00f2fe;
+
+    font-size:18px;
+
+    letter-spacing:2px;
+
+    font-weight:bold;
+}
+
+.close-settings{
+
+    width:35px;
+    height:35px;
 
     border:none;
 
-    background:transparent;
+    border-radius:10px;
+
+    background:
+    rgba(255,255,255,.06);
+
+    color:white;
+
+    font-size:18px;
 
     cursor:pointer;
 }
 
 
-/* ===============================
-   SETTINGS CONTROL
-================================ */
+.setting-item{
 
-.control-settings{
-    left:39%;
-    top:62.5%;
+    display:flex;
 
-    width:21%;
-    height:5.5%;
+    justify-content:space-between;
 
-    border:none;
+    align-items:center;
 
-    background:transparent;
+    padding:14px 0;
 
-    cursor:pointer;
+    border-bottom:
+    1px solid rgba(255,255,255,.07);
+}
+
+.setting-left{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:4px;
+}
+
+.setting-name{
+
+    font-size:15px;
+
+    color:white;
+}
+
+.setting-desc{
+
+    font-size:11px;
+
+    color:
+    rgba(255,255,255,.45);
 }
 
 
-/* ===============================
-   VOICE BUTTON
-================================ */
+/* =================================
+   SWITCH
+================================= */
 
-.voice-button{
-    left:62%;
-    top:62.5%;
+.switch{
 
-    width:22%;
-    height:5.5%;
+    position:relative;
 
-    border:none;
+    width:48px;
+    height:27px;
+}
 
-    background:transparent;
+.switch input{
+
+    opacity:0;
+
+    width:0;
+    height:0;
+}
+
+.slider{
+
+    position:absolute;
+
+    inset:0;
 
     cursor:pointer;
+
+    border-radius:30px;
+
+    background:#25333b;
+
+    transition:.25s;
+}
+
+.slider:before{
+
+    content:"";
+
+    position:absolute;
+
+    width:21px;
+    height:21px;
+
+    left:3px;
+    top:3px;
+
+    border-radius:50%;
+
+    background:white;
+
+    transition:.25s;
+}
+
+input:checked + .slider{
+
+    background:#00d9e8;
+
+    box-shadow:
+    0 0 12px rgba(0,242,254,.4);
+}
+
+input:checked + .slider:before{
+
+    transform:
+    translateX(21px);
 }
 
 
-/* ===============================
-   MOBILE
-================================ */
+/* =================================
+   SELECT
+================================= */
 
-@media(max-width:600px){
+.settings-select{
+
+    max-width:135px;
+
+    padding:8px;
+
+    border-radius:8px;
+
+    background:#07151d;
+
+    color:#00f2fe;
+
+    border:
+    1px solid rgba(0,242,254,.22);
+
+    outline:none;
+}
+
+
+/* =================================
+   CLEAR BUTTON
+================================= */
+
+.clear-chat{
+
+    width:100%;
+
+    margin-top:18px;
+
+    padding:13px;
+
+    border-radius:12px;
+
+    border:
+    1px solid rgba(255,80,80,.35);
+
+    background:
+    rgba(255,50,50,.08);
+
+    color:#ff8b8b;
+
+    cursor:pointer;
+
+    font-size:14px;
+}
+
+
+/* =================================
+   DESKTOP
+================================= */
+
+@media(min-width:601px){
 
     .background-container{
-        width:100%;
-        max-width:none;
-        height:100svh;
+
+        border-radius:16px;
     }
 
 }
 
 
-/* ===============================
-   DESKTOP
-================================ */
+/* =================================
+   SMALL MOBILE
+================================= */
 
-@media(min-width:601px){
+@media(max-width:380px){
 
-    .background-container{
-        border-radius:12px;
+    .chat-bar{
+
+        gap:4px;
+
+        padding:5px;
+    }
+
+    .settings-button,
+    .mic-button,
+    .send-button{
+
+        width:41px;
+        height:41px;
+    }
+
+    .chat-input{
+
+        font-size:13px;
     }
 
 }
 
 </style>
+
 </head>
 
 
@@ -485,7 +925,7 @@ body{
 <div class="background-container">
 
 
-<!-- BACKGROUND IMAGE -->
+<!-- BACKGROUND -->
 
 <img
 src="background.png"
@@ -493,8 +933,10 @@ class="background-image"
 alt="GURU AI SWITY"
 >
 
+<div class="background-overlay"></div>
 
-<!-- ANIMATED LIGHT -->
+
+<!-- CYBER LIGHT -->
 
 <div class="cyber-light"></div>
 
@@ -507,77 +949,279 @@ id="particles">
 </div>
 
 
-<!-- CHAT MESSAGE -->
+<!-- TOP BRAND -->
 
-<div
-id="chatMessage">
-Hello Boss. Welcome back.
+<div class="top-brand">
+
+    <div class="brand-logo">
+        ✦
+    </div>
+
+    <div class="brand-text">
+
+        <div class="brand-title">
+            SWITY
+        </div>
+
+        <div class="brand-subtitle">
+            GURU AI
+        </div>
+
+    </div>
+
 </div>
 
 
-<!-- MENU -->
+<!-- CHAT MESSAGE -->
 
-<button
-class="menu-button"
-onclick="openMenu()"
-aria-label="Menu">
-</button>
+<div class="chat-area">
 
+    <div
+    class="chat-message"
+    id="chatMessage">
 
-<!-- TOP SETTINGS -->
+        <b>SWITY:</b> I'm ready, Boss. How can I help you?
 
-<button
-class="settings-button"
-onclick="openSettings()"
-aria-label="Settings">
-</button>
+    </div>
+
+</div>
 
 
-<!-- CHAT INPUT -->
+<!-- BOTTOM CHATGPT STYLE BAR -->
 
-<input
-type="text"
-class="chat-input"
-id="userInput"
-placeholder="Ask Swity anything..."
-autocomplete="off"
->
+<div class="chat-bar-wrapper">
+
+<div class="chat-bar">
 
 
-<!-- SEND -->
+    <!-- SETTINGS LEFT -->
 
-<button
-class="send-button"
-onclick="sendMessage()"
-aria-label="Send">
-</button>
+    <button
+    class="settings-button"
+    onclick="openSettings()"
+    aria-label="Settings">
 
+        ⚙
 
-<!-- MICROPHONE -->
-
-<button
-class="mic-button"
-onclick="startMic()"
-aria-label="Microphone">
-</button>
+    </button>
 
 
-<!-- SETTINGS -->
+    <!-- INPUT -->
 
-<button
-class="control-settings"
-onclick="openSettings()"
-aria-label="Settings">
-</button>
+    <input
+    type="text"
+    class="chat-input"
+    id="userInput"
+    placeholder="Ask Swity anything..."
+    autocomplete="off"
+    >
 
 
-<!-- VOICE -->
+    <!-- MIC -->
 
-<button
-class="voice-button"
-onclick="toggleVoice()"
-aria-label="Voice">
-</button>
+    <button
+    class="mic-button"
+    id="micButton"
+    onclick="startMic()"
+    aria-label="Microphone">
+
+        🎤
+
+    </button>
+
+
+    <!-- SEND -->
+
+    <button
+    class="send-button"
+    onclick="sendMessage()"
+    aria-label="Send">
+
+        ➤
+
+    </button>
+
+
+</div>
+
+</div>
+
+
+<!-- SETTINGS OVERLAY -->
+
+<div
+class="settings-overlay"
+id="settingsOverlay"
+onclick="closeSettingsOutside(event)">
+
+<div class="settings-panel">
+
+
+    <!-- HEADER -->
+
+    <div class="settings-header">
+
+        <div class="settings-title">
+            SWITY SETTINGS
+        </div>
+
+        <button
+        class="close-settings"
+        onclick="closeSettings()">
+
+            ✕
+        </button>
+
+    </div>
+
+
+    <!-- VOICE -->
+
+    <div class="setting-item">
+
+        <div class="setting-left">
+
+            <div class="setting-name">
+                Voice Assistant
+            </div>
+
+            <div class="setting-desc">
+                Enable Swity voice replies
+            </div>
+
+        </div>
+
+
+        <label class="switch">
+
+            <input
+            type="checkbox"
+            id="voiceSwitch"
+            checked
+            onchange="changeVoice()">
+
+            <span class="slider"></span>
+
+        </label>
+
+    </div>
+
+
+    <!-- ANIMATION -->
+
+    <div class="setting-item">
+
+        <div class="setting-left">
+
+            <div class="setting-name">
+                Cyber Animation
+            </div>
+
+            <div class="setting-desc">
+                Background particles and effects
+            </div>
+
+        </div>
+
+
+        <label class="switch">
+
+            <input
+            type="checkbox"
+            id="animationSwitch"
+            checked
+            onchange="toggleAnimation()">
+
+            <span class="slider"></span>
+
+        </label>
+
+    </div>
+
+
+    <!-- LANGUAGE -->
+
+    <div class="setting-item">
+
+        <div class="setting-left">
+
+            <div class="setting-name">
+                Voice Language
+            </div>
+
+            <div class="setting-desc">
+                Select speaking language
+            </div>
+
+        </div>
+
+
+        <select
+        class="settings-select"
+        id="languageSelect"
+        onchange="changeLanguage()">
+
+            <option value="en-IN">
+                English
+            </option>
+
+            <option value="hi-IN">
+                Hindi
+            </option>
+
+            <option value="mr-IN">
+                Marathi
+            </option>
+
+        </select>
+
+    </div>
+
+
+    <!-- VOLUME -->
+
+    <div class="setting-item">
+
+        <div class="setting-left">
+
+            <div class="setting-name">
+                Voice Volume
+            </div>
+
+            <div class="setting-desc">
+                Adjust Swity voice
+            </div>
+
+        </div>
+
+
+        <input
+        type="range"
+        id="volumeControl"
+        min="0"
+        max="1"
+        step="0.1"
+        value="1"
+        onchange="changeVolume()"
+        >
+
+    </div>
+
+
+    <!-- CLEAR -->
+
+    <button
+    class="clear-chat"
+    onclick="clearChat()">
+
+        🗑 Clear Chat
+
+    </button>
+
+
+</div>
+
+</div>
 
 
 </div>
@@ -587,15 +1231,15 @@ aria-label="Voice">
 
 <script>
 
-/* ===============================
+/* =================================
    PARTICLES
-================================ */
+================================= */
 
 const particleBox =
 document.getElementById("particles");
 
 
-for(let i=0;i<45;i++){
+for(let i=0;i<42;i++){
 
     const particle =
     document.createElement("div");
@@ -625,16 +1269,22 @@ for(let i=0;i<45;i++){
 }
 
 
-/* ===============================
-   VOICE
-================================ */
+/* =================================
+   SETTINGS VARIABLES
+================================= */
 
 let voiceEnabled=true;
 
+let voiceLanguage="en-IN";
 
-/* ===============================
+let voiceVolume=1;
+
+let animationEnabled=true;
+
+
+/* =================================
    SPEAK
-================================ */
+================================= */
 
 function speak(text){
 
@@ -642,35 +1292,46 @@ function speak(text){
 
     if(!("speechSynthesis" in window))return;
 
+
     window.speechSynthesis.cancel();
+
 
     const speech =
     new SpeechSynthesisUtterance(text);
 
-    speech.lang="en-IN";
+
+    speech.lang=
+    voiceLanguage;
+
 
     speech.rate=.95;
 
+
     speech.pitch=1.15;
 
-    speech.volume=1;
+
+    speech.volume=
+    voiceVolume;
+
 
     window.speechSynthesis.speak(speech);
 
 }
 
 
-/* ===============================
+/* =================================
    SEND MESSAGE
-================================ */
+================================= */
 
 function sendMessage(){
 
     const input =
     document.getElementById("userInput");
 
+
     const chatMessage =
     document.getElementById("chatMessage");
+
 
     const text =
     input.value.trim();
@@ -679,8 +1340,8 @@ function sendMessage(){
     if(text==="")return;
 
 
-    chatMessage.innerHTML =
-    "<b>BOSS:</b> "+text;
+    chatMessage.innerHTML=
+    "<b>BOSS:</b><br>"+text;
 
 
     input.value="";
@@ -688,78 +1349,47 @@ function sendMessage(){
 
     setTimeout(function(){
 
-        const reply =
+
+        const reply=
         "I'm ready, Boss. How can I help you?";
 
 
-        chatMessage.innerHTML =
-        "<b>SWITY:</b> "+reply;
+        chatMessage.innerHTML=
+        "<b>SWITY:</b><br>"+reply;
 
 
         speak(reply);
 
-    },700);
+
+    },600);
 
 }
 
 
-/* ===============================
+/* =================================
    ENTER KEY
-================================ */
+================================= */
 
 document
 .getElementById("userInput")
 .addEventListener(
-    "keydown",
-    function(event){
+"keydown",
+function(event){
 
-        if(event.key==="Enter"){
+    if(event.key==="Enter"){
 
-            sendMessage();
+        event.preventDefault();
 
-        }
-
-    }
-);
-
-
-/* ===============================
-   VOICE TOGGLE
-================================ */
-
-function toggleVoice(){
-
-    voiceEnabled=!voiceEnabled;
-
-
-    if(voiceEnabled){
-
-        document
-        .getElementById("chatMessage")
-        .innerHTML=
-        "<b>SWITY:</b> Voice activated.";
-
-        speak("Voice activated Boss");
+        sendMessage();
 
     }
 
-    else{
-
-        window.speechSynthesis.cancel();
-
-        document
-        .getElementById("chatMessage")
-        .innerHTML=
-        "<b>SWITY:</b> Voice disabled.";
-
-    }
-
-}
+});
 
 
-/* ===============================
+/* =================================
    MICROPHONE
-================================ */
+================================= */
 
 function startMic(){
 
@@ -770,12 +1400,18 @@ function startMic(){
     window.webkitSpeechRecognition;
 
 
+    const micButton=
+    document.getElementById("micButton");
+
+
+    const chatMessage=
+    document.getElementById("chatMessage");
+
+
     if(!SpeechRecognition){
 
-        document
-        .getElementById("chatMessage")
-        .innerHTML=
-        "<b>SWITY:</b> Speech recognition is not supported in this browser.";
+        chatMessage.innerHTML=
+        "<b>SWITY:</b><br>Speech recognition is not supported in this browser.";
 
         return;
 
@@ -786,24 +1422,33 @@ function startMic(){
     new SpeechRecognition();
 
 
-    recognition.lang="en-IN";
+    recognition.lang=
+    voiceLanguage;
 
-    recognition.interimResults=false;
 
-    recognition.maxAlternatives=1;
+    recognition.interimResults=
+    false;
+
+
+    recognition.maxAlternatives=
+    1;
 
 
     recognition.start();
 
 
-    document
-    .getElementById("chatMessage")
-    .innerHTML=
-    "<b>SWITY:</b> Listening...";
+    micButton.classList.add(
+    "listening"
+    );
+
+
+    chatMessage.innerHTML=
+    "<b>SWITY:</b><br>Listening...";
 
 
     recognition.onresult=
     function(event){
+
 
         const transcript=
         event.results[0][0].transcript;
@@ -811,7 +1456,13 @@ function startMic(){
 
         document
         .getElementById("userInput")
-        .value=transcript;
+        .value=
+        transcript;
+
+
+        micButton.classList.remove(
+        "listening"
+        );
 
 
         sendMessage();
@@ -822,70 +1473,219 @@ function startMic(){
     recognition.onerror=
     function(){
 
-        document
-        .getElementById("chatMessage")
-        .innerHTML=
-        "<b>SWITY:</b> Microphone permission required.";
+
+        micButton.classList.remove(
+        "listening"
+        );
+
+
+        chatMessage.innerHTML=
+        "<b>SWITY:</b><br>Microphone permission required.";
+
+    };
+
+
+    recognition.onend=
+    function(){
+
+        micButton.classList.remove(
+        "listening"
+        );
 
     };
 
 }
 
 
-/* ===============================
-   SETTINGS
-================================ */
+/* =================================
+   OPEN SETTINGS
+================================= */
 
 function openSettings(){
 
-    const chatMessage=
-    document.getElementById("chatMessage");
-
-
-    chatMessage.innerHTML=
-    "<b>SWITY SETTINGS</b><br>" +
-    "AI: ACTIVE<br>" +
-    "CORE: ONLINE<br>" +
-    "VOICE: " +
-    (voiceEnabled?"ON":"OFF");
+    document
+    .getElementById("settingsOverlay")
+    .classList.add("active");
 
 }
 
 
-/* ===============================
-   MENU
-================================ */
+/* =================================
+   CLOSE SETTINGS
+================================= */
 
-function openMenu(){
+function closeSettings(){
+
+    document
+    .getElementById("settingsOverlay")
+    .classList.remove("active");
+
+}
+
+
+/* =================================
+   CLOSE OUTSIDE
+================================= */
+
+function closeSettingsOutside(event){
+
+    if(
+        event.target.id===
+        "settingsOverlay"
+    ){
+
+        closeSettings();
+
+    }
+
+}
+
+
+/* =================================
+   CHANGE VOICE
+================================= */
+
+function changeVoice(){
+
+    voiceEnabled=
+    document
+    .getElementById("voiceSwitch")
+    .checked;
+
+
+    if(!voiceEnabled){
+
+        window
+        .speechSynthesis
+        .cancel();
+
+    }
+
+}
+
+
+/* =================================
+   CHANGE LANGUAGE
+================================= */
+
+function changeLanguage(){
+
+    voiceLanguage=
+    document
+    .getElementById("languageSelect")
+    .value;
+
+}
+
+
+/* =================================
+   CHANGE VOLUME
+================================= */
+
+function changeVolume(){
+
+    voiceVolume=
+    parseFloat(
+
+        document
+        .getElementById("volumeControl")
+        .value
+
+    );
+
+}
+
+
+/* =================================
+   TOGGLE ANIMATION
+================================= */
+
+function toggleAnimation(){
+
+    animationEnabled=
+    document
+    .getElementById("animationSwitch")
+    .checked;
+
+
+    const particles=
+    document
+    .getElementById("particles");
+
+
+    const cyberLight=
+    document
+    .querySelector(".cyber-light");
+
+
+    if(animationEnabled){
+
+        particles.style.display=
+        "block";
+
+        cyberLight.style.display=
+        "block";
+
+    }
+
+    else{
+
+        particles.style.display=
+        "none";
+
+        cyberLight.style.display=
+        "none";
+
+    }
+
+}
+
+
+/* =================================
+   CLEAR CHAT
+================================= */
+
+function clearChat(){
+
+    window
+    .speechSynthesis
+    .cancel();
+
 
     document
     .getElementById("chatMessage")
     .innerHTML=
-    "<b>GURU AI</b><br>" +
-    "SWITY AI ASSISTANT<br>" +
-    "SYSTEM ONLINE";
+    "<b>SWITY:</b><br>Chat cleared. I'm ready, Boss.";
+
+
+    document
+    .getElementById("userInput")
+    .value=
+    "";
+
+
+    closeSettings();
 
 }
 
 
-/* ===============================
+/* =================================
    GREETING
-================================ */
+================================= */
 
 window.addEventListener(
-    "load",
-    function(){
+"load",
+function(){
 
-        setTimeout(function(){
+    setTimeout(function(){
 
-            speak(
-                "Hello Boss. Welcome back. I am Swity, your personal AI assistant."
-            );
+        speak(
+        "Hello Boss. Welcome back. I am Swity, your personal AI assistant."
+        );
 
-        },1000);
+    },1000);
 
-    }
-);
+});
 
 </script>
 
