@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width,
+        initial-scale=1.0,
+        maximum-scale=1.0,
+        user-scalable=no">
+
+    <title>SWITY AI | GURUKRUPATECH</title>
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Rajdhani:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     MAIN APP
+========================= -->
+
+<div class="app">
+
+
+    <!-- =========================
+         BACKGROUND EFFECTS
+    ========================= -->
+
+    <div class="grid-bg"></div>
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+
+
+    <!-- =========================
+         TOP NAVIGATION
+    ========================= -->
+
+    <header class="top-bar">
+
+        <button class="nav-btn"
+            id="menuBtn"
+            aria-label="Menu">
+
+            ☰
+
+        </button>
+
+
+        <div class="brand">
+
+            <div class="brand-small">
+                GURUKRUPATECH
+            </div>
+
+            <h1>SWITY</h1>
+
+            <div class="brand-sub">
+                GURU AI ASSISTANT
+            </div>
+
+        </div>
+
+
+        <button class="nav-btn"
+            id="settingsTopBtn"
+            aria-label="Settings">
+
+            ⚙
+
+        </button>
+
+    </header>
+
+
+
+    <!-- =========================
+         STATUS PANELS
+    ========================= -->
+
+    <section class="status-grid">
+
+
+        <div class="status-card">
+
+            <span class="status-title">
+                AI STATUS
+            </span>
+
+            <span class="status-value active">
+                <i></i>
+                ACTIVE
+            </span>
+
+        </div>
+
+
+        <div class="status-card center-status">
+
+            <span class="status-title">
+                CORE
+            </span>
+
+            <span class="status-value">
+                <i></i>
+                ONLINE
+            </span>
+
+        </div>
+
+
+        <div class="status-card">
+
+            <span class="status-title">
+                VOICE
+            </span>
+
+            <span class="status-value active">
+                <i></i>
+                ON
+            </span>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =========================
+         AI AVATAR
+    ========================= -->
+
+    <section class="avatar-section">
+
+
+        <div class="avatar-orbit orbit-1"></div>
+        <div class="avatar-orbit orbit-2"></div>
+        <div class="avatar-orbit orbit-3"></div>
+
+
+        <div class="avatar-core">
+
+
+            <div class="antenna"></div>
+
+
+            <div class="robot-head">
+
+                <div class="robot-face">
+
+                    <span class="eye"></span>
+                    <span class="eye"></span>
+
+                </div>
+
+            </div>
+
+
+            <div class="robot-body"></div>
+
+
+        </div>
+
+
+        <div class="avatar-name">
+            SWITY
+        </div>
+
+
+        <div class="avatar-role">
+            AI CORE
+        </div>
+
+
+        <div class="system-online">
+
+            <span></span>
+
+            SYSTEM ONLINE
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =========================
+         AI CHAT PANEL
+    ========================= -->
+
+    <main class="chat-panel">
+
+
+        <div class="chat-status">
+
+            <span class="status-line"></span>
+
+            SWITY AI • READY TO ASSIST
+
+        </div>
+
+
+        <div class="welcome-message">
+
+            <p>
+                Hello Boss. Welcome back.
+            </p>
+
+            <p>
+                I'm Swity, your personal AI assistant.
+            </p>
+
+        </div>
+
+
+
+        <!-- INPUT -->
+
+        <div class="input-row">
+
+            <input
+                type="text"
+                id="userInput"
+                placeholder="Ask Swity anything..."
+                autocomplete="off"
+            >
+
+
+            <button
+                class="send-btn"
+                id="sendBtn"
+                aria-label="Send message">
+
+                <span>➤</span>
+
+            </button>
+
+
+        </div>
+
+
+
+        <!-- CONTROLS -->
+
+        <div class="controls">
+
+
+            <button
+                class="control-btn"
+                id="micBtn">
+
+                <span class="control-icon">
+                    🎙
+                </span>
+
+                <span>
+                    MIC
+                </span>
+
+            </button>
+
+
+
+            <button
+                class="control-btn"
+                id="settingsBtn">
+
+                <span class="control-icon">
+                    ⚙
+                </span>
+
+                <span>
+                    SETTINGS
+                </span>
+
+            </button>
+
+
+
+            <button
+                class="control-btn voice-btn"
+                id="voiceBtn">
+
+                <span class="control-icon">
+                    🔊
+                </span>
+
+                <span id="voiceText">
+                    VOICE ON
+                </span>
+
+            </button>
+
+
+        </div>
+
+
+    </main>
+
+
+
+    <!-- =========================
+         HOLOGRAPHIC GLOBE
+    ========================= -->
+
+    <section class="globe-section">
+
+
+        <div class="globe-rings"></div>
+
+
+        <div class="globe">
+
+            <div class="globe-grid vertical"></div>
+            <div class="globe-grid horizontal"></div>
+
+            <div class="continent continent-1"></div>
+            <div class="continent continent-2"></div>
+            <div class="continent continent-3"></div>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =========================
+         BOTTOM VERSION
+    ========================= -->
+
+    <footer>
+
+        GURU AI • SWITY CORE V1.0
+
+    </footer>
+
+
+</div>
+
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+
+const input = document.getElementById("userInput");
+const sendBtn = document.getElementById("sendBtn");
+
+const voiceBtn = document.getElementById("voiceBtn");
+const voiceText = document.getElementById("voiceText");
+
+const micBtn = document.getElementById("micBtn");
+
+
+
+/* SEND */
+
+function sendMessage(){
+
+    const message = input.value.trim();
+
+    if(message === ""){
+
+        input.focus();
+
+        return;
+
+    }
+
+
+    console.log("User:", message);
+
+
+    input.value = "";
+
+
+    sendBtn.classList.add("sent");
+
+
+    setTimeout(() => {
+
+        sendBtn.classList.remove("sent");
+
+    }, 300);
+
+}
+
+
+
+/* SEND BUTTON */
+
+sendBtn.addEventListener(
+    "click",
+    sendMessage
+);
+
+
+
+/* ENTER KEY */
+
+input.addEventListener(
+    "keydown",
+    function(event){
+
+        if(event.key === "Enter"){
+
+            sendMessage();
+
+        }
+
+    }
+);
+
+
+
+/* VOICE BUTTON */
+
+voiceBtn.addEventListener(
+    "click",
+    function(){
+
+        voiceBtn.classList.toggle("voice-off");
+
+
+        if(
+            voiceBtn.classList.contains(
+                "voice-off"
+            )
+        ){
+
+            voiceText.textContent = "VOICE OFF";
+
+        }
+
+        else{
+
+            voiceText.textContent = "VOICE ON";
+
+        }
+
+    }
+);
+
+
+
+/* MIC BUTTON */
+
+micBtn.addEventListener(
+    "click",
+    function(){
+
+        micBtn.classList.add("recording");
+
+
+        setTimeout(() => {
+
+            micBtn.classList.remove(
+                "recording"
+            );
+
+        }, 1500);
+
+    }
+);
+
+
+</script>
+
+
+</body>
+</html>
