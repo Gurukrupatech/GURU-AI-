@@ -213,7 +213,7 @@ body{
     align-items: center;
 
     margin-bottom: 22px;
-
+flex-wrap: nowrap;
 }
 
 
@@ -241,9 +241,6 @@ body{
     font-size: 25px;
 
     cursor: pointer;
-
-   align-self: start;
-   margin-top: 18px;
     
    box-shadow:
 
