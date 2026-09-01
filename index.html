@@ -2229,78 +2229,50 @@ speechSynthesis.cancel();
         return;
     }
 
-    // आधी चालू असलेला आवाज बंद करा
     speechSynthesis.cancel();
 
     const speech =
     new SpeechSynthesisUtterance(text);
 
-    // Settings मधून निवडलेली भाषा
-    speech.lang =
+    const selectedLanguage =
     languageSelect.value;
 
-    // Cute आणि soft आवाजासाठी speed
+    speech.lang =
+    selectedLanguage;
+
     speech.rate =
     parseFloat(speedSelect.value);
 
-    // Cute high-pitched tone
     speech.pitch =
     1.35;
 
-    // Full volume
     speech.volume =
     1;
 
+    const voices =
+    speechSynthesis.getVoices();
+
+    const selectedVoice =
+    voices.find(function(voice){
+
+        return voice.lang
+        .toLowerCase()
+        .startsWith(
+            selectedLanguage
+            .substring(0,2)
+            .toLowerCase()
+        );
+
+    });
+
+    if(selectedVoice){
+
+        speech.voice =
+        selectedVoice;
+
+    }
+
     speechSynthesis.speak(speech);
-
-}
-
-
-
-/* =========================================
-   MICROPHONE
-========================================= */
-
-const SpeechRecognition =
-
-window.SpeechRecognition
-||
-window.webkitSpeechRecognition;
-
-
-let recognition;
-
-
-if(SpeechRecognition){
-
-
-recognition =
-new SpeechRecognition();
-
-
-recognition.continuous =
-false;
-
-
-recognition.interimResults =
-false;
-
-
-recognition.lang =
-"en-US";
-
-
-recognition.onstart =
-function(){
-
-micBtn.classList.add(
-"recording"
-);
-
-
-micBtn.innerHTML =
-"🔴 LISTENING";
-
 
 };
 
