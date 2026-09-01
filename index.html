@@ -2223,47 +2223,27 @@ speechSynthesis.cancel();
    TEXT TO SPEECH
 ========================================= */
 
-   function speak(text){
+   function speak(text) {
 
-    if(!voiceEnabled){
+    if (!voiceEnabled) {
         return;
     }
 
     speechSynthesis.cancel();
 
-    const speech =
-    new SpeechSynthesisUtterance(text);
+    const speech = new SpeechSynthesisUtterance(text);
 
-    const selectedLanguage =
-    languageSelect.value;
+    speech.lang = languageSelect.value;
 
-    speech.lang =
-    selectedLanguage;
+    speech.rate = parseFloat(speedSelect.value);
 
-    speech.rate =
-    parseFloat(speedSelect.value);
+    speech.pitch = 1.35;
 
-    speech.pitch =
-    1.35;
+    speech.volume = 1;
 
-    speech.volume =
-    1;
+    speechSynthesis.speak(speech);
+}
 
-    const voices =
-    speechSynthesis.getVoices();
-
-    const selectedVoice =
-    voices.find(function(voice){
-
-        return voice.lang
-        .toLowerCase()
-        .startsWith(
-            selectedLanguage
-            .substring(0,2)
-            .toLowerCase()
-        );
-
-    });
 
     if(selectedVoice){
 
