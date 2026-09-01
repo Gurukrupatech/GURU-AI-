@@ -2223,47 +2223,35 @@ speechSynthesis.cancel();
    TEXT TO SPEECH
 ========================================= */
 
-function speak(text){
+   function speak(text){
 
+    if(!voiceEnabled){
+        return;
+    }
 
-if(!voiceEnabled){
+    // आधी चालू असलेला आवाज बंद करा
+    speechSynthesis.cancel();
 
-return;
+    const speech =
+    new SpeechSynthesisUtterance(text);
 
-}
+    // Settings मधून निवडलेली भाषा
+    speech.lang =
+    languageSelect.value;
 
+    // Cute आणि soft आवाजासाठी speed
+    speech.rate =
+    parseFloat(speedSelect.value);
 
-speechSynthesis.cancel();
+    // Cute high-pitched tone
+    speech.pitch =
+    1.35;
 
+    // Full volume
+    speech.volume =
+    1;
 
-const speech =
-new SpeechSynthesisUtterance(
-text
-);
-
-
-speech.lang =
-languageSelect.value;
-
-
-speech.rate =
-parseFloat(
-speedSelect.value
-);
-
-
-speech.pitch =
-1.1;
-
-
-speech.volume =
-1;
-
-
-speechSynthesis.speak(
-speech
-);
-
+    speechSynthesis.speak(speech);
 
 }
 
