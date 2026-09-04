@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="theme-color"
+        content="#020609"
+    >
+
+    <title>
+        GURU AI • SWITY
+    </title>
+
+    <!-- CSS -->
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     MAIN APP
+========================================= -->
+
+<div class="app">
+
+
+    <!-- =====================================
+         TOP HEADER
+    ====================================== -->
+
+    <header class="topbar">
+
+        <!-- MENU -->
+        <button
+            class="icon-btn"
+            id="menuBtn"
+            type="button"
+        >
+            ☰
+        </button>
+
+
+        <!-- BRAND -->
+        <div class="brand">
+
+            <div class="brand-company">
+                GURUKRUPATECH
+            </div>
+
+            <h1>
+                SWITY
+            </h1>
+
+            <div class="brand-subtitle">
+                GURU AI ASSISTANT
+            </div>
+
+            <div class="creator">
+                CREATE BY SHIV SONUNE
+            </div>
+
+        </div>
+
+
+        <!-- SETTINGS -->
+        <button
+            class="icon-btn"
+            id="settingsBtn"
+            type="button"
+        >
+            ⚙
+        </button>
+
+    </header>
+
+
+
+    <!-- =====================================
+         STATUS CARDS
+    ====================================== -->
+
+    <section class="status-row">
+
+
+        <div class="status-card">
+
+            <span class="status-title">
+                AI STATUS
+            </span>
+
+            <div class="status-value">
+
+                <span class="status-dot"></span>
+
+                ACTIVE
+
+            </div>
+
+        </div>
+
+
+
+        <div class="status-card">
+
+            <span class="status-title">
+                CORE
+            </span>
+
+            <div class="status-value">
+
+                <span class="status-dot"></span>
+
+                ONLINE
+
+            </div>
+
+        </div>
+
+
+
+        <div class="status-card">
+
+            <span class="status-title">
+                VOICE
+            </span>
+
+            <div class="status-value">
+
+                <span
+                    class="status-dot"
+                    id="voiceDot"
+                ></span>
+
+                <span id="voiceStatus">
+                    ON
+                </span>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =====================================
+         AI CORE
+    ====================================== -->
+
+    <section class="ai-core">
+
+
+        <div class="core-rings">
+
+
+            <!-- ROBOT -->
+            <div class="robot">
+
+
+                <div class="robot-eye eye-left"></div>
+
+                <div class="robot-eye eye-right"></div>
+
+
+                <div class="robot-mouth"></div>
+
+
+                <div class="robot-antenna"></div>
+
+
+            </div>
+
+
+        </div>
+
+
+        <div class="core-name">
+            SWITY
+        </div>
+
+
+        <div class="core-type">
+            AI CORE
+        </div>
+
+
+        <div class="system-online">
+
+            <span class="status-dot"></span>
+
+            SYSTEM ONLINE
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =====================================
+         DASHBOARD
+    ====================================== -->
+
+    <section class="dashboard">
+
+
+        <!-- =================================
+             LEFT PANEL
+        ================================== -->
+
+        <aside class="side-panel">
+
+
+            <div class="glass-panel">
+
+                <h3>
+                    SYSTEM LOGS
+                </h3>
+
+                <div class="system-log">
+
+                    ▸ initialize_system.exe<br>
+
+                    ▸ gurukrupatech_core<br>
+
+                    ▸ guru_ai_assistant<br>
+
+                    ▸ swity_online<br>
+
+                    ▸ voice_module_ready<br>
+
+                    ▸ secure_connection<br>
+
+                    ▸ response_engine_active
+
+                </div>
+
+            </div>
+
+
+
+            <div class="glass-panel">
+
+                <h3>
+                    CONTROL PANEL
+                </h3>
+
+                <div class="system-log">
+
+                    ▸ data packets: 072A<br>
+
+                    ▸ bandwidth: stable<br>
+
+                    ▸ processing: 98.7%<br>
+
+                    ▸ memory: optimal<br>
+
+                    ▸ security: active<br>
+
+                    ▸ system: ready
+
+                </div>
+
+            </div>
+
+
+        </aside>
+
+
+
+        <!-- =================================
+             CENTER AI CHAT
+        ================================== -->
+
+        <main class="center-panel">
+
+
+            <div class="chat-box">
+
+
+                <!-- CHAT HEADER -->
+
+                <div class="chat-header">
+
+                    <span>
+                        ●
+                    </span>
+
+                    SWITY AI
+
+                    <small>
+                        • READY TO ASSIST
+                    </small>
+
+                </div>
+
+
+
+                <!-- MESSAGES -->
+
+                <div
+                    class="messages"
+                    id="messages"
+                >
+
+
+                    <div class="message ai-message">
+
+                        Hello Boss. Welcome back.<br>
+
+                        I'm Swity, your personal AI
+                        assistant.
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- INPUT -->
+
+                <div class="input-area">
+
+
+                    <textarea
+                        id="userInput"
+                        placeholder="Ask Swity anything..."
+                        rows="2"
+                    ></textarea>
+
+
+                    <button
+                        id="sendBtn"
+                        class="send-btn"
+                        type="button"
+                    >
+
+                        ➤
+
+                    </button>
+
+
+                </div>
+
+
+
+                <!-- QUICK TOOLS -->
+
+                <div class="quick-tools">
+
+
+                    <button
+                        class="quick-btn"
+                        data-question="Explain trading risk management simply"
+                    >
+                        📊 Risk
+                    </button>
+
+
+                    <button
+                        class="quick-btn"
+                        data-question="Give me a trading learning roadmap"
+                    >
+                        📈 Trading
+                    </button>
+
+
+                    <button
+                        class="quick-btn"
+                        data-question="Help me build a website"
+                    >
+                        💻 Web
+                    </button>
+
+
+                    <button
+                        class="quick-btn"
+                        data-question="Calculate position size"
+                    >
+                        🧮 Calculator
+                    </button>
+
+
+                </div>
+
+
+
+                <!-- ACTION BUTTONS -->
+
+                <div class="action-buttons">
+
+
+                    <button
+                        id="micBtn"
+                        class="action-btn"
+                        type="button"
+                    >
+                        🎙 MIC
+                    </button>
+
+
+                    <button
+                        id="settingsChatBtn"
+                        class="action-btn"
+                        type="button"
+                    >
+                        ⚙ SETTINGS
+                    </button>
+
+
+                    <button
+                        id="voiceBtn"
+                        class="action-btn"
+                        type="button"
+                    >
+                        🔊 VOICE ON
+                    </button>
+
+
+                </div>
+
+
+
+                <!-- EXTRA TOOLS -->
+
+                <div class="extra-tools">
+
+
+                    <button
+                        id="clearBtn"
+                        type="button"
+                    >
+                        🧹 Clear
+                    </button>
+
+
+                    <button
+                        id="notesBtn"
+                        type="button"
+                    >
+                        📝 Notes
+                    </button>
+
+
+                    <button
+                        id="exportBtn"
+                        type="button"
+                    >
+                        📤 Export
+                    </button>
+
+
+                </div>
+
+
+            </div>
+
+
+        </main>
+
+
+
+        <!-- =================================
+             RIGHT PANEL
+        ================================== -->
+
+        <aside class="side-panel">
+
+
+            <div class="glass-panel">
+
+                <h3>
+                    DATA STREAM
+                </h3>
+
+                <p>
+                    incoming_packets
+                </p>
+
+                <p>
+                    channel_secure_01
+                </p>
+
+                <p>
+                    data flow continuous
+                </p>
+
+                <p>
+                    integrity verified
+                </p>
+
+
+                <div
+                    class="chart"
+                    id="dataChart"
+                ></div>
+
+            </div>
+
+
+
+            <div class="glass-panel">
+
+                <h3>
+                    NETWORK
+                </h3>
+
+                <div class="network-status">
+
+                    ● SECURE
+
+                </div>
+
+            </div>
+
+
+
+            <div class="glass-panel">
+
+                <h3>
+                    SIGNAL STRENGTH
+                </h3>
+
+
+                <div
+                    class="chart"
+                    id="signalChart"
+                ></div>
+
+
+            </div>
+
+
+
+            <div class="glass-panel">
+
+                <h3>
+                    ENCRYPTION
+                </h3>
+
+                <div class="encryption">
+
+                    🔒 AES-256<br>
+
+                    Secure Session<br>
+
+                    Protected Channel
+
+                </div>
+
+            </div>
+
+
+        </aside>
+
+
+    </section>
+
+
+
+    <!-- =====================================
+         FOOTER
+    ====================================== -->
+
+    <footer class="footer">
+
+        GURU AI • SWITY CORE v1.0
+
+        <br>
+
+        GURUKRUPATECH
+
+    </footer>
+
+
+</div>
+
+
+
+<!-- =========================================
+     SETTINGS MODAL
+========================================= -->
+
+<div
+    class="modal"
+    id="settingsModal"
+>
+
+
+    <div class="modal-box">
+
+
+        <div class="modal-header">
+
+            <h2>
+                SWITY SETTINGS
+            </h2>
+
+
+            <button
+                id="closeSettings"
+                type="button"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+
+        <!-- VOICE -->
+
+        <div class="setting">
+
+            <label>
+                Voice
+            </label>
+
+            <select
+                id="voiceSelect"
+            >
+
+                <option>
+                    Loading voices...
+                </option>
+
+            </select>
+
+        </div>
+
+
+
+        <!-- SPEED -->
+
+        <div class="setting">
+
+            <label>
+                Voice Speed
+            </label>
+
+            <input
+                type="range"
+                id="voiceRate"
+                min="0.6"
+                max="1.5"
+                step="0.05"
+                value="0.95"
+            >
+
+        </div>
+
+
+
+        <!-- PITCH -->
+
+        <div class="setting">
+
+            <label>
+                Voice Pitch
+            </label>
+
+            <input
+                type="range"
+                id="voicePitch"
+                min="0.6"
+                max="1.6"
+                step="0.05"
+                value="1.1"
+            >
+
+        </div>
+
+
+
+        <!-- API ENDPOINT -->
+
+        <div class="setting">
+
+            <label>
+                AI Backend Endpoint
+            </label>
+
+            <input
+                type="text"
+                id="apiEndpoint"
+                placeholder="https://your-server.com/chat"
+            >
+
+        </div>
+
+
+        <div class="security-note">
+
+            🔐 Never put your private AI API key
+            directly inside this HTML/JS.
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================
+     NOTES MODAL
+========================================= -->
+
+<div
+    class="modal"
+    id="notesModal"
+>
+
+
+    <div class="modal-box">
+
+
+        <div class="modal-header">
+
+            <h2>
+                📝 SWITY NOTES
+            </h2>
+
+
+            <button
+                id="closeNotes"
+                type="button"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <textarea
+            id="notesArea"
+            class="notes-area"
+            placeholder="Write your notes here..."
+        ></textarea>
+
+
+        <button
+            id="saveNotes"
+            class="save-btn"
+            type="button"
+        >
+            SAVE NOTES
+        </button>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================
+     JAVASCRIPT
+========================================= -->
+
+<script src="script.js"></script>
+
+
+</body>
+
+</html>
