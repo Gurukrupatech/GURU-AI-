@@ -1,0 +1,2544 @@
+/* =========================================================
+   GURU AI • SWITY
+   GURUKRUPATECH
+   CREATE BY SHIV SONUNE
+   ========================================================= */
+
+
+/* =========================================================
+   ROOT
+   ========================================================= */
+
+:root{
+
+    --bg:#020609;
+
+    --cyan:#00eaff;
+
+    --green:#00ff9d;
+
+    --blue:#28bfff;
+
+    --white:#e9ffff;
+
+    --muted:#78a7a7;
+
+    --panel:rgba(2,12,15,.74);
+
+    --panel-dark:rgba(1,10,13,.88);
+
+    --line:rgba(0,234,255,.38);
+
+    --line-green:rgba(0,255,157,.30);
+
+    --shadow:
+        0 0 28px rgba(0,234,255,.18);
+
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+
+html{
+
+    background:var(--bg);
+
+    scroll-behavior:smooth;
+
+}
+
+
+body{
+
+    min-height:100vh;
+
+    overflow-x:hidden;
+
+    color:var(--white);
+
+    font-family:
+        Inter,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    background:
+
+        linear-gradient(
+            rgba(0,0,0,.20),
+            rgba(0,0,0,.34)
+        ),
+
+        url("background.png")
+        center top /
+        cover
+        fixed
+        no-repeat;
+
+}
+
+
+/* =========================================================
+   GLOBAL CYBER OVERLAY
+   ========================================================= */
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    z-index:-1;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 42%,
+            rgba(0,234,255,.08),
+            transparent 32%
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(0,255,157,.03),
+            transparent 50%,
+            rgba(0,234,255,.03)
+        );
+
+}
+
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+::-webkit-scrollbar{
+
+    width:6px;
+
+}
+
+
+::-webkit-scrollbar-track{
+
+    background:#020609;
+
+}
+
+
+::-webkit-scrollbar-thumb{
+
+    background:
+
+        linear-gradient(
+            var(--cyan),
+            var(--green)
+        );
+
+    border-radius:20px;
+
+}
+
+
+/* =========================================================
+   BUTTON / INPUT
+   ========================================================= */
+
+button,
+input,
+textarea,
+select{
+
+    font:inherit;
+
+}
+
+
+button{
+
+    cursor:pointer;
+
+}
+
+
+/* =========================================================
+   MAIN APP
+   ========================================================= */
+
+.app{
+
+    width:min(100%,1080px);
+
+    margin:auto;
+
+    padding:
+
+        18px
+        18px
+        35px;
+
+}
+
+
+/* =========================================================
+   TOP BAR
+   ========================================================= */
+
+.topbar{
+
+    display:grid;
+
+    grid-template-columns:
+
+        80px
+        1fr
+        80px;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+
+/* =========================================================
+   HEADER ICON BUTTON
+   ========================================================= */
+
+.icon-btn{
+
+    width:64px;
+
+    height:64px;
+
+    border:
+
+        1px solid
+        var(--line);
+
+    border-radius:16px;
+
+    background:
+
+        rgba(1,13,17,.62);
+
+    color:var(--cyan);
+
+    font-size:28px;
+
+    box-shadow:var(--shadow);
+
+    backdrop-filter:blur(12px);
+
+    transition:
+
+        .2s
+        ease;
+
+}
+
+
+.icon-btn:hover{
+
+    box-shadow:
+
+        0 0 32px
+        rgba(0,234,255,.42);
+
+    transform:
+
+        translateY(-1px);
+
+}
+
+
+.icon-btn:active{
+
+    transform:
+
+        scale(.94);
+
+}
+
+
+/* =========================================================
+   BRAND
+   ========================================================= */
+
+.brand{
+
+    text-align:center;
+
+}
+
+
+.brand-company{
+
+    font-weight:800;
+
+    letter-spacing:4px;
+
+    color:var(--green);
+
+    font-size:
+
+        clamp(
+            14px,
+            2.5vw,
+            22px
+        );
+
+    text-shadow:
+
+        0 0 10px
+        rgba(0,255,157,.3);
+
+}
+
+
+.brand h1{
+
+    font-size:
+
+        clamp(
+            38px,
+            7vw,
+            70px
+        );
+
+    letter-spacing:8px;
+
+    line-height:.95;
+
+    color:#ecffff;
+
+    text-shadow:
+
+        0 0 12px
+        rgba(0,234,255,.9),
+
+        0 0 35px
+        rgba(0,234,255,.45);
+
+    animation:
+
+        titleGlow
+        3s
+        ease-in-out
+        infinite;
+
+}
+
+
+@keyframes titleGlow{
+
+    0%,
+    100%{
+
+        filter:brightness(1);
+
+    }
+
+    50%{
+
+        filter:brightness(1.25);
+
+    }
+
+}
+
+
+.brand-subtitle{
+
+    color:var(--green);
+
+    letter-spacing:4px;
+
+    margin-top:9px;
+
+    font-size:13px;
+
+}
+
+
+.creator{
+
+    margin-top:7px;
+
+    color:#8ffff0;
+
+    font-size:11px;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+    text-shadow:
+
+        0 0 9px
+        rgba(0,234,255,.35);
+
+}
+
+
+/* =========================================================
+   STATUS ROW
+   ========================================================= */
+
+.status-row{
+
+    display:grid;
+
+    grid-template-columns:
+
+        repeat(
+            3,
+            1fr
+        );
+
+    gap:14px;
+
+    margin:
+
+        18px
+        72px
+        10px;
+
+}
+
+
+/* =========================================================
+   STATUS CARD
+   ========================================================= */
+
+.status-card{
+
+    border:
+
+        1px solid
+        var(--line);
+
+    border-radius:14px;
+
+    padding:
+
+        14px
+        18px;
+
+    background:
+
+        var(--panel);
+
+    backdrop-filter:
+
+        blur(12px);
+
+    box-shadow:
+
+        var(--shadow);
+
+    transition:
+
+        .25s
+        ease;
+
+}
+
+
+.status-card:hover{
+
+    border-color:
+
+        rgba(
+            0,
+            255,
+            157,
+            .55
+        );
+
+    box-shadow:
+
+        0 0 25px
+        rgba(
+            0,
+            255,
+            157,
+            .16
+        );
+
+    transform:
+
+        translateY(-2px);
+
+}
+
+
+.status-title{
+
+    display:block;
+
+    color:#8ac1c1;
+
+    letter-spacing:1.5px;
+
+    font-size:11px;
+
+    margin-bottom:7px;
+
+}
+
+
+.status-value{
+
+    font-weight:800;
+
+    letter-spacing:1px;
+
+}
+
+
+/* =========================================================
+   STATUS DOT
+   ========================================================= */
+
+.status-dot{
+
+    display:inline-block;
+
+    width:10px;
+
+    height:10px;
+
+    border-radius:50%;
+
+    background:
+
+        var(--green);
+
+    box-shadow:
+
+        0 0 12px
+        var(--green);
+
+    margin-right:7px;
+
+    animation:
+
+        statusPulse
+        1.8s
+        infinite;
+
+}
+
+
+@keyframes statusPulse{
+
+    0%,
+    100%{
+
+        opacity:1;
+
+        box-shadow:
+
+            0 0 8px
+            var(--green);
+
+    }
+
+    50%{
+
+        opacity:.55;
+
+        box-shadow:
+
+            0 0 20px
+            var(--green);
+
+    }
+
+}
+
+
+/* =========================================================
+   AI CORE
+   ========================================================= */
+
+.ai-core{
+
+    text-align:center;
+
+    padding:
+
+        18px
+        0
+        10px;
+
+}
+
+
+/* =========================================================
+   CORE RINGS
+   ========================================================= */
+
+.core-rings{
+
+    width:
+
+        min(
+            58vw,
+            430px
+        );
+
+    aspect-ratio:1;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    display:grid;
+
+    place-items:center;
+
+    border:
+
+        1px solid
+        rgba(
+            0,
+            234,
+            255,
+            .35
+        );
+
+    background:
+
+        repeating-radial-gradient(
+
+            circle,
+
+            transparent
+            0 23px,
+
+            rgba(
+                0,
+                234,
+                255,
+                .24
+            )
+            24px 26px,
+
+            transparent
+            27px 40px
+
+        );
+
+    box-shadow:
+
+        inset
+        0 0 55px
+        rgba(
+            0,
+            234,
+            255,
+            .08
+        ),
+
+        0 0 45px
+        rgba(
+            0,
+            234,
+            255,
+            .18
+        );
+
+    animation:
+
+        corePulse
+        4s
+        ease-in-out
+        infinite;
+
+}
+
+
+@keyframes corePulse{
+
+    0%{
+
+        transform:
+            scale(1);
+
+        filter:
+            brightness(1);
+
+    }
+
+    50%{
+
+        transform:
+            scale(1.015);
+
+        filter:
+            brightness(1.25);
+
+    }
+
+    100%{
+
+        transform:
+            scale(1);
+
+        filter:
+            brightness(1);
+
+    }
+
+}
+
+
+/* =========================================================
+   ROBOT
+   ========================================================= */
+
+.robot{
+
+    position:relative;
+
+    width:46%;
+
+    aspect-ratio:1;
+
+    border-radius:38%;
+
+    background:
+
+        linear-gradient(
+
+            145deg,
+
+            #efffff,
+
+            #a9d7dc 55%,
+
+            #5e9da6
+
+        );
+
+    box-shadow:
+
+        0 0 35px
+        rgba(
+            0,
+            234,
+            255,
+            .7
+        ),
+
+        inset
+        0 -18px 30px
+        rgba(
+            0,
+            80,
+            90,
+            .32
+        );
+
+    animation:
+
+        robotFloat
+        3s
+        ease-in-out
+        infinite;
+
+}
+
+
+@keyframes robotFloat{
+
+    0%,
+    100%{
+
+        transform:
+            translateY(0);
+
+    }
+
+    50%{
+
+        transform:
+            translateY(-5px);
+
+    }
+
+}
+
+
+/* =========================================================
+   ROBOT FACE
+   ========================================================= */
+
+.robot::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:
+
+        18%
+        11%;
+
+    border-radius:28%;
+
+    background:#041318;
+
+    box-shadow:
+
+        inset
+        0 0 25px
+        rgba(
+            0,
+            234,
+            255,
+            .18
+        );
+
+}
+
+
+/* =========================================================
+   ROBOT EYES
+   ========================================================= */
+
+.robot-eye{
+
+    position:absolute;
+
+    top:36%;
+
+    width:13%;
+
+    height:13%;
+
+    border-radius:50%;
+
+    background:
+
+        var(--cyan);
+
+    box-shadow:
+
+        0 0 14px
+        var(--cyan);
+
+    z-index:2;
+
+    animation:
+
+        eyeBlink
+        4s
+        infinite;
+
+}
+
+
+.eye-left{
+
+    left:31%;
+
+}
+
+
+.eye-right{
+
+    right:31%;
+
+}
+
+
+@keyframes eyeBlink{
+
+    0%,
+    43%,
+    47%,
+    100%{
+
+        transform:
+            scaleY(1);
+
+    }
+
+    45%{
+
+        transform:
+            scaleY(.08);
+
+    }
+
+}
+
+
+/* =========================================================
+   ROBOT MOUTH
+   ========================================================= */
+
+.robot-mouth{
+
+    position:absolute;
+
+    z-index:2;
+
+    left:42%;
+
+    top:55%;
+
+    width:16%;
+
+    height:8%;
+
+    border-bottom:
+
+        3px solid
+        var(--cyan);
+
+    border-radius:
+
+        0 0 30px 30px;
+
+}
+
+
+/* =========================================================
+   ROBOT ANTENNA
+   ========================================================= */
+
+.robot-antenna{
+
+    position:absolute;
+
+    width:14%;
+
+    height:18%;
+
+    left:43%;
+
+    top:-13%;
+
+    border-radius:
+
+        50%
+        50%
+        25%
+        25%;
+
+    background:#dffaff;
+
+    box-shadow:
+
+        0 0 15px
+        rgba(
+            0,
+            234,
+            255,
+            .5
+        );
+
+}
+
+
+/* =========================================================
+   CORE NAME
+   ========================================================= */
+
+.core-name{
+
+    position:relative;
+
+    margin-top:-56px;
+
+    font-size:27px;
+
+    font-weight:800;
+
+    letter-spacing:5px;
+
+    text-shadow:
+
+        0 0 14px
+        var(--cyan);
+
+}
+
+
+.core-type{
+
+    color:var(--cyan);
+
+    font-size:11px;
+
+    letter-spacing:3px;
+
+    margin-top:5px;
+
+}
+
+
+/* =========================================================
+   SYSTEM ONLINE
+   ========================================================= */
+
+.system-online{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:2px;
+
+    border:
+
+        1px solid
+        var(--line);
+
+    border-radius:20px;
+
+    padding:
+
+        8px
+        17px;
+
+    margin-top:20px;
+
+    background:
+
+        rgba(
+            0,
+            20,
+            23,
+            .65
+        );
+
+    color:#91ffff;
+
+    font-size:11px;
+
+    letter-spacing:2px;
+
+}
+
+
+/* =========================================================
+   DASHBOARD
+   ========================================================= */
+
+.dashboard{
+
+    display:grid;
+
+    grid-template-columns:
+
+        1fr
+        1.7fr
+        1fr;
+
+    gap:14px;
+
+    align-items:start;
+
+}
+
+
+.side-panel{
+
+    display:grid;
+
+    gap:14px;
+
+}
+
+
+/* =========================================================
+   GLASS PANELS
+   ========================================================= */
+
+.glass-panel{
+
+    border:
+
+        1px solid
+        var(--line);
+
+    border-radius:14px;
+
+    padding:15px;
+
+    background:
+
+        var(--panel);
+
+    backdrop-filter:
+
+        blur(12px);
+
+    box-shadow:
+
+        var(--shadow);
+
+    transition:
+
+        .25s
+        ease;
+
+}
+
+
+.glass-panel:hover{
+
+    border-color:
+
+        rgba(
+            0,
+            234,
+            255,
+            .65
+        );
+
+    box-shadow:
+
+        0 0 30px
+        rgba(
+            0,
+            234,
+            255,
+            .15
+        );
+
+}
+
+
+/* =========================================================
+   PANEL HEADINGS
+   ========================================================= */
+
+.glass-panel h3{
+
+    font-size:11px;
+
+    color:var(--green);
+
+    letter-spacing:2px;
+
+    margin-bottom:11px;
+
+}
+
+
+.glass-panel p{
+
+    font-size:10px;
+
+    line-height:1.6;
+
+    color:#62a0a0;
+
+}
+
+
+/* =========================================================
+   SYSTEM LOG
+   ========================================================= */
+
+.system-log{
+
+    font-size:10px;
+
+    line-height:1.6;
+
+    color:#62a0a0;
+
+}
+
+
+/* =========================================================
+   NETWORK
+   ========================================================= */
+
+.network-status{
+
+    font-size:16px;
+
+    color:#7effca;
+
+    text-shadow:
+
+        0 0 8px
+        rgba(
+            0,
+            255,
+            157,
+            .35
+        );
+
+}
+
+
+/* =========================================================
+   ENCRYPTION
+   ========================================================= */
+
+.encryption{
+
+    font-size:10px;
+
+    line-height:1.7;
+
+    color:#62a0a0;
+
+}
+
+
+/* =========================================================
+   CHAT BOX
+   ========================================================= */
+
+.chat-box{
+
+    border:
+
+        1px solid
+        var(--line);
+
+    border-radius:24px;
+
+    padding:22px;
+
+    background:
+
+        var(--panel-dark);
+
+    backdrop-filter:
+
+        blur(18px);
+
+    box-shadow:
+
+        0 0 40px
+        rgba(
+            0,
+            234,
+            255,
+            .20
+        );
+
+}
+
+
+/* =========================================================
+   CHAT HEADER
+   ========================================================= */
+
+.chat-header{
+
+    color:var(--cyan);
+
+    font-weight:800;
+
+    letter-spacing:1px;
+
+    margin-bottom:17px;
+
+}
+
+
+.chat-header span{
+
+    color:var(--green);
+
+}
+
+
+.chat-header small{
+
+    color:var(--green);
+
+    font-size:11px;
+
+}
+
+
+/* =========================================================
+   MESSAGES
+   ========================================================= */
+
+.messages{
+
+    height:220px;
+
+    overflow-y:auto;
+
+    display:grid;
+
+    align-content:start;
+
+    gap:9px;
+
+    margin-bottom:8px;
+
+    padding-right:3px;
+
+}
+
+
+/* =========================================================
+   MESSAGE
+   ========================================================= */
+
+.message{
+
+    padding:
+
+        10px
+        12px;
+
+    border-radius:12px;
+
+    font-size:13px;
+
+    line-height:1.5;
+
+    white-space:pre-wrap;
+
+    word-break:break-word;
+
+    animation:
+
+        messageIn
+        .25s
+        ease;
+
+}
+
+
+@keyframes messageIn{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translateY(7px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* =========================================================
+   AI MESSAGE
+   ========================================================= */
+
+.ai-message{
+
+    background:
+
+        rgba(
+            0,
+            234,
+            255,
+            .06
+        );
+
+    border-left:
+
+        2px solid
+        var(--cyan);
+
+}
+
+
+/* =========================================================
+   USER MESSAGE
+   ========================================================= */
+
+.user-message{
+
+    background:
+
+        rgba(
+            0,
+            255,
+            157,
+            .07
+        );
+
+    border-right:
+
+        2px solid
+        var(--green);
+
+    text-align:right;
+
+}
+
+
+/* =========================================================
+   TYPING
+   ========================================================= */
+
+.typing{
+
+    height:19px;
+
+    color:#5aa0a0;
+
+    font-size:10px;
+
+    visibility:hidden;
+
+    margin-bottom:5px;
+
+}
+
+
+.typing.show{
+
+    visibility:visible;
+
+    animation:
+
+        typingPulse
+        1s
+        infinite;
+
+}
+
+
+@keyframes typingPulse{
+
+    50%{
+
+        opacity:.35;
+
+    }
+
+}
+
+
+/* =========================================================
+   INPUT AREA
+   ========================================================= */
+
+.input-area{
+
+    display:grid;
+
+    grid-template-columns:
+
+        1fr
+        62px;
+
+    gap:10px;
+
+}
+
+
+textarea{
+
+    resize:vertical;
+
+    min-height:62px;
+
+    max-height:160px;
+
+    border:
+
+        1px solid
+        rgba(
+            0,
+            234,
+            255,
+            .42
+        );
+
+    border-radius:14px;
+
+    background:
+
+        rgba(
+            0,
+            7,
+            10,
+            .78
+        );
+
+    color:#fff;
+
+    padding:15px;
+
+    outline:none;
+
+    transition:.2s;
+
+}
+
+
+textarea::placeholder{
+
+    color:#688585;
+
+}
+
+
+textarea:focus{
+
+    border-color:
+
+        var(--cyan);
+
+    box-shadow:
+
+        0 0 18px
+        rgba(
+            0,
+            234,
+            255,
+            .15
+        );
+
+}
+
+
+/* =========================================================
+   SEND BUTTON
+   ========================================================= */
+
+.send-btn{
+
+    border:0;
+
+    border-radius:14px;
+
+    background:
+
+        linear-gradient(
+
+            145deg,
+
+            #14dfff,
+
+            #00a9e8
+
+        );
+
+    color:#001014;
+
+    font-size:25px;
+
+    font-weight:900;
+
+    box-shadow:
+
+        0 0 20px
+        rgba(
+            0,
+            234,
+            255,
+            .35
+        );
+
+    transition:.2s;
+
+}
+
+
+.send-btn:hover{
+
+    transform:
+
+        scale(1.04);
+
+    box-shadow:
+
+        0 0 30px
+        rgba(
+            0,
+            234,
+            255,
+            .55
+        );
+
+}
+
+
+.send-btn:active{
+
+    transform:
+
+        scale(.93);
+
+}
+
+
+/* =========================================================
+   QUICK TOOLS
+   ========================================================= */
+
+.quick-tools{
+
+    display:grid;
+
+    grid-template-columns:
+
+        repeat(
+            4,
+            1fr
+        );
+
+    gap:10px;
+
+    margin-top:12px;
+
+}
+
+
+.quick-btn{
+
+    min-height:38px;
+
+    border:
+
+        1px solid
+        var(--line);
+
+    border-radius:12px;
+
+    background:
+
+        rgba(
+            0,
+            12,
+            15,
+            .70
+        );
+
+    color:var(--cyan);
+
+    font-weight:700;
+
+    font-size:11px;
+
+    transition:.2s;
+
+}
+
+
+.quick-btn:hover{
+
+    background:
+
+        rgba(
+            0,
+            234,
+            255,
+            .08
+        );
+
+    box-shadow:
+
+        0 0 18px
+        rgba(
+            0,
+            234,
+            255,
+            .20
+        );
+
+    transform:
+
+        translateY(-2px);
+
+}
+
+
+/* =========================================================
+   ACTION BUTTONS
+   ========================================================= */
+
+.action-buttons{
+
+    display:grid;
+
+    grid-template-columns:
+
+        repeat(
+            3,
+            1fr
+        );
+
+    gap:10px;
+
+    margin-top:12px;
+
+}
+
+
+.action-btn{
+
+    min-height:48px;
+
+    border:
+
+        1px solid
+        var(--line);
+
+    border-radius:12px;
+
+    background:
+
+        rgba(
+            0,
+            12,
+            15,
+            .70
+        );
+
+    color:var(--cyan);
+
+    font-weight:700;
+
+    transition:.2s;
+
+}
+
+
+.action-btn:hover{
+
+    background:
+
+        rgba(
+            0,
+            234,
+            255,
+            .08
+        );
+
+    box-shadow:
+
+        0 0 18px
+        rgba(
+            0,
+            234,
+            255,
+            .20
+        );
+
+}
+
+
+.action-btn:active{
+
+    transform:
+
+        scale(.96);
+
+}
+
+
+/* =========================================================
+   EXTRA TOOLS
+   ========================================================= */
+
+.extra-tools{
+
+    display:grid;
+
+    grid-template-columns:
+
+        repeat(
+            3,
+            1fr
+        );
+
+    gap:10px;
+
+    margin-top:12px;
+
+}
+
+
+.extra-tools button{
+
+    min-height:44px;
+
+    border:
+
+        1px solid
+        var(--line-green);
+
+    border-radius:12px;
+
+    background:
+
+        rgba(
+            0,
+            12,
+            15,
+            .65
+        );
+
+    color:#8ffff0;
+
+    font-size:11px;
+
+    font-weight:700;
+
+    transition:.2s;
+
+}
+
+
+.extra-tools button:hover{
+
+    background:
+
+        rgba(
+            0,
+            255,
+            157,
+            .08
+        );
+
+    box-shadow:
+
+        0 0 18px
+        rgba(
+            0,
+            255,
+            157,
+            .14
+        );
+
+}
+
+
+/* =========================================================
+   DATA CHART
+   ========================================================= */
+
+.chart{
+
+    height:80px;
+
+    display:flex;
+
+    align-items:end;
+
+    gap:5px;
+
+    padding-top:8px;
+
+}
+
+
+.bar{
+
+    flex:1;
+
+    background:
+
+        linear-gradient(
+
+            to top,
+
+            var(--green),
+
+            var(--cyan)
+
+        );
+
+    min-width:4px;
+
+    border-radius:
+
+        3px
+        3px
+        0
+        0;
+
+    box-shadow:
+
+        0 0 8px
+        rgba(
+            0,
+            255,
+            157,
+            .25
+        );
+
+    transition:
+
+        height
+        .35s
+        ease;
+
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.footer{
+
+    text-align:center;
+
+    color:#377575;
+
+    font-size:10px;
+
+    letter-spacing:2px;
+
+    margin-top:20px;
+
+    line-height:1.8;
+
+}
+
+
+/* =========================================================
+   MODAL
+   ========================================================= */
+
+.modal{
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+
+        rgba(
+            0,
+            0,
+            0,
+            .72
+        );
+
+    display:none;
+
+    place-items:center;
+
+    padding:18px;
+
+    z-index:20;
+
+    backdrop-filter:
+
+        blur(5px);
+
+}
+
+
+.modal.open{
+
+    display:grid;
+
+}
+
+
+/* =========================================================
+   MODAL BOX
+   ========================================================= */
+
+.modal-box{
+
+    width:
+
+        min(
+            100%,
+            520px
+        );
+
+    max-height:88vh;
+
+    overflow:auto;
+
+    border:
+
+        1px solid
+        var(--line);
+
+    border-radius:20px;
+
+    background:#031014;
+
+    box-shadow:
+
+        0 0 50px
+        rgba(
+            0,
+            234,
+            255,
+            .25
+        );
+
+    padding:20px;
+
+    animation:
+
+        modalIn
+        .2s
+        ease;
+
+}
+
+
+@keyframes modalIn{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            scale(.95);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            scale(1);
+
+    }
+
+}
+
+
+/* =========================================================
+   MODAL HEADER
+   ========================================================= */
+
+.modal-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:18px;
+
+}
+
+
+.modal-header h2{
+
+    color:var(--cyan);
+
+    letter-spacing:2px;
+
+    font-size:20px;
+
+}
+
+
+.modal-header button{
+
+    background:none;
+
+    border:0;
+
+    color:#9bd;
+
+    font-size:28px;
+
+}
+
+
+/* =========================================================
+   SETTINGS
+   ========================================================= */
+
+.setting{
+
+    padding:13px 0;
+
+    border-bottom:
+
+        1px solid
+        rgba(
+            0,
+            234,
+            255,
+            .12
+        );
+
+}
+
+
+.setting label{
+
+    display:block;
+
+    color:#bcecec;
+
+    margin-bottom:7px;
+
+    font-size:13px;
+
+}
+
+
+select,
+input[type="url"]{
+
+    width:100%;
+
+    background:#06181c;
+
+    color:#fff;
+
+    border:
+
+        1px solid
+        var(--line);
+
+    border-radius:9px;
+
+    padding:10px;
+
+    outline:none;
+
+}
+
+
+input[type="range"]{
+
+    width:100%;
+
+    accent-color:
+
+        var(--cyan);
+
+}
+
+
+/* =========================================================
+   SECURITY NOTE
+   ========================================================= */
+
+.security-note{
+
+    margin:
+
+        15px
+        0;
+
+    color:#6fa0a0;
+
+    font-size:11px;
+
+    line-height:1.5;
+
+}
+
+
+/* =========================================================
+   SAVE BUTTON
+   ========================================================= */
+
+.save-btn{
+
+    width:100%;
+
+    min-height:48px;
+
+    border:
+
+        1px solid
+        var(--line);
+
+    border-radius:12px;
+
+    background:
+
+        rgba(
+            0,
+            234,
+            255,
+            .07
+        );
+
+    color:var(--cyan);
+
+    font-weight:800;
+
+    transition:.2s;
+
+}
+
+
+.save-btn:hover{
+
+    background:
+
+        rgba(
+            0,
+            234,
+            255,
+            .15
+        );
+
+    box-shadow:
+
+        0 0 20px
+        rgba(
+            0,
+            234,
+            255,
+            .20
+        );
+
+}
+
+
+/* =========================================================
+   NOTES
+   ========================================================= */
+
+.notes-area{
+
+    width:100%;
+
+    min-height:240px;
+
+    margin-bottom:12px;
+
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media(max-width:800px){
+
+    .status-row{
+
+        margin:
+
+            14px
+            0;
+
+    }
+
+
+    .dashboard{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .center-panel{
+
+        order:-1;
+
+    }
+
+
+    .side-panel{
+
+        grid-template-columns:
+
+            1fr
+            1fr;
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media(max-width:560px){
+
+    .app{
+
+        padding:
+
+            12px;
+
+    }
+
+
+    .topbar{
+
+        grid-template-columns:
+
+            56px
+            1fr
+            56px;
+
+    }
+
+
+    .icon-btn{
+
+        width:50px;
+
+        height:50px;
+
+        font-size:24px;
+
+    }
+
+
+    .brand-company{
+
+        letter-spacing:2px;
+
+    }
+
+
+    .brand h1{
+
+        font-size:38px;
+
+        letter-spacing:5px;
+
+    }
+
+
+    .brand-subtitle{
+
+        letter-spacing:2px;
+
+    }
+
+
+    .creator{
+
+        font-size:9px;
+
+        letter-spacing:1.4px;
+
+    }
+
+
+    .status-row{
+
+        gap:7px;
+
+    }
+
+
+    .status-card{
+
+        padding:
+
+            10px
+            9px;
+
+    }
+
+
+    .status-title{
+
+        font-size:9px;
+
+    }
+
+
+    .status-value{
+
+        font-size:11px;
+
+    }
+
+
+    .core-rings{
+
+        width:82vw;
+
+    }
+
+
+    .dashboard{
+
+        display:block;
+
+    }
+
+
+    .side-panel{
+
+        grid-template-columns:
+
+            1fr
+            1fr;
+
+        margin-top:10px;
+
+    }
+
+
+    .glass-panel{
+
+        min-height:120px;
+
+    }
+
+
+    .chat-box{
+
+        padding:15px;
+
+        border-radius:18px;
+
+    }
+
+
+    .messages{
+
+        height:190px;
+
+    }
+
+
+    .input-area{
+
+        grid-template-columns:
+
+            1fr
+            55px;
+
+    }
+
+
+    .quick-tools{
+
+        grid-template-columns:
+
+            1fr
+            1fr;
+
+    }
+
+
+    .action-buttons{
+
+        gap:7px;
+
+    }
+
+
+    .action-btn{
+
+        font-size:11px;
+
+    }
+
+
+    .extra-tools{
+
+        gap:7px;
+
+    }
+
+
+    .extra-tools button{
+
+        font-size:10px;
+
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media(max-width:370px){
+
+    .side-panel{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .brand h1{
+
+        font-size:33px;
+
+    }
+
+
+    .quick-tools{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .status-row{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media(prefers-reduced-motion:reduce){
+
+    *,
+    *::before,
+    *::after{
+
+        animation-duration:
+            .01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        scroll-behavior:auto !important;
+
+    }
+
+}
