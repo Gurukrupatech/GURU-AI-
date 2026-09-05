@@ -1,0 +1,1374 @@
+/* =========================================================
+   GURU AI • SWITY
+   STYLE.CSS
+   CREATED BY SHIV SONUNE
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    width:100%;
+    min-height:100%;
+    background:#020609;
+}
+
+body{
+    width:100%;
+    min-height:100vh;
+    overflow-x:hidden;
+    color:#dffcff;
+    font-family:"Rajdhani","Segoe UI",sans-serif;
+
+    background:
+        linear-gradient(
+            rgba(0,10,10,.35),
+            rgba(0,5,8,.55)
+        ),
+        url("background.png") center top / cover fixed no-repeat;
+
+    background-color:#020609;
+}
+
+
+/* =========================================================
+   APP
+========================================================= */
+
+.app{
+    width:100%;
+    max-width:1400px;
+    min-height:100vh;
+    margin:auto;
+    padding:20px;
+}
+
+
+/* =========================================================
+   TOP BAR
+========================================================= */
+
+.topbar{
+    width:100%;
+    min-height:120px;
+
+    display:grid;
+    grid-template-columns:90px 1fr 90px;
+    align-items:center;
+    gap:20px;
+}
+
+.brand{
+    text-align:center;
+}
+
+.brand-company{
+    color:#00ff9d;
+    font-family:"Orbitron",sans-serif;
+    font-size:20px;
+    font-weight:700;
+    letter-spacing:4px;
+    text-shadow:0 0 15px #00ff9d;
+}
+
+.brand h1{
+    margin:3px 0;
+    color:#e9ffff;
+    font-family:"Orbitron",sans-serif;
+    font-size:54px;
+    line-height:1;
+    letter-spacing:8px;
+    text-shadow:
+        0 0 8px #00eaff,
+        0 0 25px #00eaff,
+        0 0 50px rgba(0,234,255,.5);
+}
+
+.brand-subtitle{
+    color:#00f2c8;
+    font-family:"Orbitron",sans-serif;
+    font-size:16px;
+    letter-spacing:4px;
+}
+
+.creator{
+    margin-top:6px;
+    color:#73ffe0;
+    font-size:11px;
+    font-weight:600;
+    letter-spacing:3px;
+}
+
+
+/* =========================================================
+   ICON BUTTON
+========================================================= */
+
+.icon-btn{
+    width:70px;
+    height:70px;
+
+    border:1px solid rgba(0,238,255,.65);
+    border-radius:18px;
+
+    background:rgba(0,15,20,.72);
+
+    color:#00eaff;
+    font-size:30px;
+
+    cursor:pointer;
+
+    box-shadow:
+        inset 0 0 20px rgba(0,238,255,.08),
+        0 0 18px rgba(0,238,255,.15);
+
+    transition:.25s ease;
+}
+
+.icon-btn:hover{
+    transform:translateY(-2px);
+    box-shadow:
+        0 0 25px rgba(0,238,255,.4);
+}
+
+
+/* =========================================================
+   STATUS ROW
+========================================================= */
+
+.status-row{
+    width:100%;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+    margin:15px 0 25px;
+}
+
+.status-card{
+    min-height:82px;
+    padding:15px 20px;
+
+    border:1px solid rgba(0,238,255,.4);
+    border-radius:18px;
+
+    background:rgba(0,14,19,.72);
+
+    box-shadow:
+        inset 0 0 20px rgba(0,238,255,.04),
+        0 0 15px rgba(0,238,255,.08);
+}
+
+.status-title{
+    display:block;
+
+    color:#75e8df;
+    font-family:"Orbitron",sans-serif;
+    font-size:12px;
+    letter-spacing:2px;
+}
+
+.status-value{
+    margin-top:7px;
+
+    color:#ecffff;
+    font-family:"Orbitron",sans-serif;
+    font-size:19px;
+    font-weight:600;
+}
+
+.status-dot{
+    display:inline-block;
+
+    width:9px;
+    height:9px;
+
+    margin-right:6px;
+
+    border-radius:50%;
+
+    background:#00ff9d;
+
+    box-shadow:
+        0 0 8px #00ff9d,
+        0 0 18px #00ff9d;
+}
+
+
+/* =========================================================
+   AI CORE
+========================================================= */
+
+.ai-core{
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    padding:15px 0 25px;
+}
+
+.core-rings{
+    width:390px;
+    height:390px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    border:2px solid rgba(0,238,255,.55);
+
+    box-shadow:
+        0 0 20px rgba(0,238,255,.2),
+        inset 0 0 30px rgba(0,238,255,.1);
+
+    position:relative;
+
+    animation:corePulse 4s infinite ease-in-out;
+}
+
+.core-rings::before,
+.core-rings::after{
+    content:"";
+    position:absolute;
+
+    border-radius:50%;
+
+    border:1px solid rgba(0,238,255,.35);
+}
+
+.core-rings::before{
+    width:310px;
+    height:310px;
+}
+
+.core-rings::after{
+    width:250px;
+    height:250px;
+}
+
+
+/* =========================================================
+   ROBOT
+========================================================= */
+
+.robot{
+    width:190px;
+    height:145px;
+
+    position:relative;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:55px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #f2ffff,
+            #a8dce0 55%,
+            #5aa6ad
+        );
+
+    box-shadow:
+        0 0 20px #00eaff,
+        0 0 55px rgba(0,238,255,.6);
+
+    z-index:2;
+}
+
+.robot::before{
+    content:"";
+
+    position:absolute;
+
+    width:145px;
+    height:95px;
+
+    border-radius:35px;
+
+    background:#001116;
+
+    box-shadow:
+        inset 0 0 25px rgba(0,238,255,.12);
+}
+
+
+/* antenna */
+
+.robot-antenna{
+    position:absolute;
+
+    width:9px;
+    height:30px;
+
+    top:-27px;
+
+    border-radius:8px;
+
+    background:#bafcff;
+
+    box-shadow:0 0 15px #00eaff;
+}
+
+.robot-antenna::after{
+    content:"";
+
+    position:absolute;
+
+    width:14px;
+    height:14px;
+
+    left:-2px;
+    top:-8px;
+
+    border-radius:50%;
+
+    background:#dfffff;
+
+    box-shadow:0 0 15px #00eaff;
+}
+
+
+/* eyes */
+
+.robot-eye{
+    position:absolute;
+
+    width:21px;
+    height:21px;
+
+    top:52px;
+
+    border-radius:50%;
+
+    background:#00eaff;
+
+    box-shadow:
+        0 0 10px #00eaff,
+        0 0 25px #00eaff;
+
+    z-index:4;
+}
+
+.eye-left{
+    left:55px;
+}
+
+.eye-right{
+    right:55px;
+}
+
+
+/* mouth */
+
+.robot-mouth{
+    position:absolute;
+
+    width:38px;
+    height:17px;
+
+    left:76px;
+    top:82px;
+
+    border-bottom:4px solid #00eaff;
+    border-radius:0 0 30px 30px;
+
+    z-index:4;
+}
+
+
+/* =========================================================
+   CORE TEXT
+========================================================= */
+
+.core-name{
+    margin-top:18px;
+
+    color:#eaffff;
+
+    font-family:"Orbitron",sans-serif;
+    font-size:32px;
+    font-weight:700;
+
+    letter-spacing:7px;
+
+    text-shadow:
+        0 0 12px #00eaff;
+}
+
+.core-type{
+    margin-top:3px;
+
+    color:#00ffb7;
+
+    font-family:"Orbitron",sans-serif;
+    font-size:12px;
+    letter-spacing:4px;
+}
+
+.system-online{
+    margin-top:12px;
+
+    padding:8px 22px;
+
+    border:1px solid rgba(0,238,255,.45);
+    border-radius:20px;
+
+    background:rgba(0,15,20,.7);
+
+    color:#a5ffff;
+
+    font-size:12px;
+    letter-spacing:2px;
+}
+
+
+/* =========================================================
+   DASHBOARD
+========================================================= */
+
+.dashboard{
+    width:100%;
+
+    display:grid;
+
+    grid-template-columns:1fr minmax(420px,600px) 1fr;
+
+    gap:22px;
+
+    align-items:start;
+}
+
+
+/* =========================================================
+   SIDE PANELS
+========================================================= */
+
+.side-panel{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+.glass-panel{
+    padding:20px;
+
+    border:1px solid rgba(0,238,255,.35);
+    border-radius:18px;
+
+    background:rgba(0,14,18,.72);
+
+    box-shadow:
+        inset 0 0 25px rgba(0,238,255,.035),
+        0 0 15px rgba(0,238,255,.07);
+
+    backdrop-filter:blur(5px);
+}
+
+.glass-panel h3{
+    margin-bottom:12px;
+
+    color:#00eaff;
+
+    font-family:"Orbitron",sans-serif;
+    font-size:12px;
+    letter-spacing:2px;
+}
+
+.glass-panel p{
+    margin:5px 0;
+
+    color:#75cfc9;
+    font-size:11px;
+}
+
+.system-log{
+    color:#58cfc2;
+
+    font-family:"Share Tech Mono","Courier New",monospace;
+    font-size:10px;
+    line-height:1.75;
+}
+
+.network-status{
+    color:#00ff9d;
+    font-family:"Orbitron",sans-serif;
+    font-size:15px;
+}
+
+
+/* =========================================================
+   CHAT BOX
+========================================================= */
+
+.center-panel{
+    width:100%;
+}
+
+.chat-box{
+    width:100%;
+
+    padding:20px;
+
+    border:1px solid rgba(0,238,255,.75);
+    border-radius:25px;
+
+    background:rgba(0,13,18,.88);
+
+    box-shadow:
+        0 0 25px rgba(0,238,255,.16),
+        inset 0 0 30px rgba(0,238,255,.04);
+
+    backdrop-filter:blur(10px);
+}
+
+.chat-header{
+    color:#00eaff;
+
+    font-family:"Orbitron",sans-serif;
+    font-size:15px;
+    font-weight:600;
+
+    letter-spacing:1px;
+
+    margin-bottom:15px;
+}
+
+.chat-header span{
+    color:#00ff9d;
+    text-shadow:0 0 10px #00ff9d;
+}
+
+.chat-header small{
+    color:#4de5c3;
+    font-size:10px;
+}
+
+
+/* =========================================================
+   MESSAGES
+========================================================= */
+
+.messages{
+    width:100%;
+
+    min-height:170px;
+    max-height:300px;
+
+    overflow-y:auto;
+
+    padding:18px;
+
+    border:1px solid rgba(0,238,255,.3);
+    border-radius:17px;
+
+    background:rgba(0,10,14,.72);
+
+    scrollbar-width:thin;
+}
+
+.message{
+    width:max-content;
+    max-width:92%;
+
+    padding:11px 14px;
+
+    margin-bottom:10px;
+
+    border-radius:13px;
+
+    font-size:14px;
+    line-height:1.5;
+}
+
+.ai-message{
+    color:#d9ffff;
+
+    border:1px solid rgba(0,238,255,.18);
+
+    background:rgba(0,238,255,.045);
+}
+
+.user-message{
+    margin-left:auto;
+
+    color:#fff;
+
+    background:rgba(0,220,255,.12);
+
+    border:1px solid rgba(0,238,255,.4);
+}
+
+
+/* =========================================================
+   INPUT
+========================================================= */
+
+.input-area{
+    width:100%;
+
+    display:grid;
+    grid-template-columns:1fr 70px;
+
+    gap:10px;
+
+    margin-top:12px;
+}
+
+#userInput{
+    width:100%;
+
+    min-height:58px;
+    max-height:130px;
+
+    resize:none;
+
+    padding:16px;
+
+    border:1px solid rgba(0,238,255,.5);
+    border-radius:15px;
+
+    outline:none;
+
+    color:#eaffff;
+
+    background:rgba(0,10,14,.9);
+
+    font-family:"Rajdhani",sans-serif;
+    font-size:16px;
+}
+
+#userInput::placeholder{
+    color:#6b9297;
+}
+
+#userInput:focus{
+    border-color:#00eaff;
+
+    box-shadow:
+        0 0 15px rgba(0,238,255,.15);
+}
+
+
+/* =========================================================
+   SEND
+========================================================= */
+
+.send-btn{
+    min-height:58px;
+
+    border:0;
+    border-radius:15px;
+
+    background:#00cfff;
+
+    color:#001014;
+
+    font-size:29px;
+    font-weight:bold;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 0 20px rgba(0,207,255,.45);
+
+    transition:.2s ease;
+}
+
+.send-btn:hover{
+    transform:scale(1.04);
+}
+
+.send-btn:active{
+    transform:scale(.96);
+}
+
+
+/* =========================================================
+   ONLY 3 ACTION BUTTONS
+========================================================= */
+
+.action-buttons{
+    width:100%;
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+
+    gap:10px;
+
+    margin-top:12px;
+}
+
+.action-btn{
+    min-height:50px;
+
+    border:1px solid rgba(0,238,255,.4);
+    border-radius:13px;
+
+    background:rgba(0,18,23,.8);
+
+    color:#bfffff;
+
+    font-family:"Rajdhani",sans-serif;
+    font-size:14px;
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.2s ease;
+}
+
+.action-btn:hover{
+    color:#fff;
+
+    border-color:#00eaff;
+
+    box-shadow:
+        0 0 15px rgba(0,238,255,.2);
+}
+
+.action-btn:active{
+    transform:scale(.97);
+}
+
+
+/* =========================================================
+   CHARTS
+========================================================= */
+
+.chart{
+    height:65px;
+
+    margin-top:10px;
+
+    border-bottom:2px solid rgba(0,255,157,.7);
+
+    background:
+        repeating-linear-gradient(
+            90deg,
+            transparent 0 10px,
+            rgba(0,255,157,.25) 11px 13px
+        );
+
+    opacity:.75;
+}
+
+
+/* =========================================================
+   ENCRYPTION
+========================================================= */
+
+.encryption{
+    color:#65d7c8;
+
+    font-family:"Share Tech Mono",monospace;
+    font-size:10px;
+    line-height:1.8;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer{
+    width:100%;
+
+    margin-top:25px;
+    padding:15px;
+
+    text-align:center;
+
+    color:#4ba99f;
+
+    font-family:"Orbitron",sans-serif;
+    font-size:9px;
+
+    letter-spacing:3px;
+}
+
+
+/* =========================================================
+   SETTINGS MODAL
+========================================================= */
+
+.modal{
+    position:fixed;
+
+    inset:0;
+
+    z-index:9999;
+
+    display:none;
+
+    align-items:center;
+    justify-content:center;
+
+    padding:20px;
+
+    background:rgba(0,0,0,.75);
+
+    backdrop-filter:blur(8px);
+}
+
+.modal.active{
+    display:flex;
+}
+
+.modal-box{
+    width:min(500px,100%);
+
+    padding:22px;
+
+    border:1px solid #00eaff;
+    border-radius:22px;
+
+    background:#031014;
+
+    box-shadow:
+        0 0 40px rgba(0,238,255,.25);
+}
+
+.modal-header{
+    display:flex;
+
+    align-items:center;
+    justify-content:space-between;
+
+    margin-bottom:20px;
+}
+
+.modal-header h2{
+    color:#00eaff;
+
+    font-family:"Orbitron",sans-serif;
+    font-size:17px;
+}
+
+.modal-header button{
+    width:40px;
+    height:40px;
+
+    border:1px solid rgba(0,238,255,.4);
+    border-radius:10px;
+
+    background:transparent;
+
+    color:#00eaff;
+
+    font-size:25px;
+
+    cursor:pointer;
+}
+
+.setting{
+    margin-bottom:17px;
+}
+
+.setting label{
+    display:block;
+
+    margin-bottom:7px;
+
+    color:#82ddd5;
+
+    font-size:13px;
+}
+
+.setting input,
+.setting select{
+    width:100%;
+
+    min-height:45px;
+
+    padding:10px;
+
+    border:1px solid rgba(0,238,255,.35);
+    border-radius:10px;
+
+    outline:none;
+
+    color:#dfffff;
+
+    background:#06171c;
+}
+
+.setting input[type="range"]{
+    padding:0;
+}
+
+.security-note{
+    padding:12px;
+
+    border-radius:10px;
+
+    color:#6fd5ca;
+
+    background:rgba(0,238,255,.04);
+
+    font-size:11px;
+}
+
+
+/* =========================================================
+   SPEAKING ANIMATION
+========================================================= */
+
+.swity-speaking .core-rings{
+    animation:
+        corePulse .8s infinite ease-in-out;
+}
+
+.swity-speaking .robot-mouth{
+    animation:
+        mouthTalk .18s infinite alternate;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes corePulse{
+
+    0%,100%{
+        transform:scale(1);
+        box-shadow:
+            0 0 20px rgba(0,238,255,.2),
+            inset 0 0 30px rgba(0,238,255,.1);
+    }
+
+    50%{
+        transform:scale(1.015);
+        box-shadow:
+            0 0 40px rgba(0,238,255,.35),
+            inset 0 0 45px rgba(0,238,255,.15);
+    }
+
+}
+
+@keyframes mouthTalk{
+
+    from{
+        transform:scaleY(.6);
+    }
+
+    to{
+        transform:scaleY(1.3);
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width:1000px){
+
+    .app{
+        padding:15px;
+    }
+
+    .dashboard{
+        grid-template-columns:1fr;
+    }
+
+    .left-panel,
+    .right-panel{
+        display:none;
+    }
+
+    .center-panel{
+        max-width:650px;
+        margin:auto;
+    }
+
+    .core-rings{
+        width:330px;
+        height:330px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width:600px){
+
+    body{
+        background:
+            linear-gradient(
+                rgba(0,8,10,.30),
+                rgba(0,5,8,.50)
+            ),
+            url("background.png") center top / cover fixed no-repeat;
+    }
+
+    .app{
+        padding:8px;
+    }
+
+
+    /* HEADER */
+
+    .topbar{
+        min-height:105px;
+
+        grid-template-columns:48px 1fr 48px;
+
+        gap:5px;
+    }
+
+    .icon-btn{
+        width:46px;
+        height:46px;
+
+        border-radius:13px;
+
+        font-size:23px;
+    }
+
+    .brand-company{
+        font-size:10px;
+        letter-spacing:2px;
+    }
+
+    .brand h1{
+        font-size:37px;
+        letter-spacing:5px;
+    }
+
+    .brand-subtitle{
+        font-size:8px;
+        letter-spacing:2px;
+    }
+
+    .creator{
+        margin-top:3px;
+        font-size:7px;
+        letter-spacing:1.5px;
+    }
+
+
+    /* STATUS */
+
+    .status-row{
+        gap:5px;
+        margin:4px 0 12px;
+    }
+
+    .status-card{
+        min-height:58px;
+        padding:9px 7px;
+
+        border-radius:12px;
+
+        text-align:left;
+    }
+
+    .status-title{
+        font-size:7px;
+        letter-spacing:1px;
+    }
+
+    .status-value{
+        margin-top:4px;
+        font-size:11px;
+    }
+
+    .status-dot{
+        width:6px;
+        height:6px;
+        margin-right:3px;
+    }
+
+
+    /* CORE */
+
+    .ai-core{
+        padding:3px 0 12px;
+    }
+
+    .core-rings{
+        width:245px;
+        height:245px;
+    }
+
+    .core-rings::before{
+        width:195px;
+        height:195px;
+    }
+
+    .core-rings::after{
+        width:155px;
+        height:155px;
+    }
+
+    .robot{
+        width:120px;
+        height:92px;
+
+        border-radius:35px;
+    }
+
+    .robot::before{
+        width:92px;
+        height:61px;
+
+        border-radius:22px;
+    }
+
+    .robot-antenna{
+        width:6px;
+        height:20px;
+        top:-18px;
+    }
+
+    .robot-antenna::after{
+        width:9px;
+        height:9px;
+        left:-1.5px;
+        top:-6px;
+    }
+
+    .robot-eye{
+        width:13px;
+        height:13px;
+        top:34px;
+    }
+
+    .eye-left{
+        left:34px;
+    }
+
+    .eye-right{
+        right:34px;
+    }
+
+    .robot-mouth{
+        width:25px;
+        height:11px;
+
+        left:47px;
+        top:53px;
+
+        border-bottom-width:3px;
+    }
+
+    .core-name{
+        margin-top:8px;
+        font-size:23px;
+        letter-spacing:5px;
+    }
+
+    .core-type{
+        font-size:8px;
+        letter-spacing:3px;
+    }
+
+    .system-online{
+        margin-top:6px;
+        padding:5px 13px;
+        font-size:8px;
+    }
+
+
+    /* DASHBOARD */
+
+    .dashboard{
+        display:block;
+    }
+
+    .center-panel{
+        width:100%;
+    }
+
+
+    /* CHAT */
+
+    .chat-box{
+        padding:10px;
+
+        border-radius:18px;
+    }
+
+    .chat-header{
+        margin-bottom:8px;
+        font-size:11px;
+    }
+
+    .chat-header small{
+        font-size:7px;
+    }
+
+
+    /* MESSAGES */
+
+    .messages{
+        min-height:125px;
+        max-height:180px;
+
+        padding:10px;
+
+        border-radius:12px;
+    }
+
+    .message{
+        max-width:94%;
+
+        padding:8px 10px;
+
+        margin-bottom:7px;
+
+        font-size:11px;
+
+        line-height:1.45;
+    }
+
+
+    /* INPUT */
+
+    .input-area{
+        grid-template-columns:1fr 52px;
+        gap:6px;
+
+        margin-top:7px;
+    }
+
+    #userInput{
+        min-height:48px;
+        max-height:90px;
+
+        padding:12px;
+
+        border-radius:11px;
+
+        font-size:13px;
+    }
+
+    .send-btn{
+        min-height:48px;
+        border-radius:11px;
+        font-size:23px;
+    }
+
+
+    /* ONLY 3 BUTTONS */
+
+    .action-buttons{
+        grid-template-columns:repeat(3,1fr);
+        gap:5px;
+
+        margin-top:7px;
+    }
+
+    .action-btn{
+        min-height:42px;
+
+        border-radius:10px;
+
+        font-size:10px;
+    }
+
+
+    /* FOOTER */
+
+    .footer{
+        margin-top:12px;
+        padding:8px;
+
+        font-size:6px;
+        letter-spacing:1.5px;
+    }
+
+
+    /* MODAL */
+
+    .modal{
+        padding:12px;
+    }
+
+    .modal-box{
+        padding:16px;
+        border-radius:16px;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width:370px){
+
+    .brand h1{
+        font-size:31px;
+    }
+
+    .brand-company{
+        font-size:8px;
+    }
+
+    .brand-subtitle{
+        font-size:7px;
+    }
+
+    .core-rings{
+        width:215px;
+        height:215px;
+    }
+
+    .core-rings::before{
+        width:170px;
+        height:170px;
+    }
+
+    .core-rings::after{
+        width:135px;
+        height:135px;
+    }
+
+    .robot{
+        width:105px;
+        height:80px;
+    }
+
+    .robot::before{
+        width:80px;
+        height:53px;
+    }
+
+    .eye-left{
+        left:29px;
+    }
+
+    .eye-right{
+        right:29px;
+    }
+
+    .robot-eye{
+        top:30px;
+    }
+
+    .robot-mouth{
+        left:40px;
+        top:47px;
+    }
+
+    .core-name{
+        font-size:20px;
+    }
+
+}
