@@ -2488,28 +2488,382 @@ input[type="range"]{
 /* =========================================================
    SMALL MOBILE
    ========================================================= */
+/* =========================================================
+   SWITY MOBILE COMPACT MODE
+   Screenshot-style layout
+========================================================= */
 
-@media(max-width:370px){
+@media (max-width: 600px){
 
-    .side-panel{
-
-        grid-template-columns:1fr;
-
+    html,
+    body{
+        width:100%;
+        min-height:100%;
+        overflow-x:hidden;
     }
 
+    body{
+        margin:0;
+        padding:0;
+    }
+
+    .app{
+        width:100%;
+        max-width:430px;
+        margin:0 auto;
+        padding:10px 10px 14px;
+    }
+
+
+    /* ===============================
+       HEADER
+    =============================== */
+
+    .topbar{
+        height:78px;
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        gap:8px;
+        margin-bottom:8px;
+    }
+
+    .brand{
+        text-align:center;
+        flex:1;
+        min-width:0;
+    }
+
+    .brand-company{
+        font-size:11px;
+        letter-spacing:2px;
+        line-height:1;
+    }
 
     .brand h1{
-
-        font-size:33px;
-
+        font-size:35px;
+        line-height:.95;
+        margin:4px 0;
+        letter-spacing:4px;
     }
 
+    .brand-subtitle{
+        font-size:8px;
+        letter-spacing:2px;
+    }
+
+    .creator{
+        font-size:6px;
+        letter-spacing:1.5px;
+        margin-top:3px;
+    }
+
+    .icon-btn{
+        width:43px;
+        height:43px;
+        min-width:43px;
+        border-radius:12px;
+        font-size:21px;
+    }
+
+
+    /* ===============================
+       STATUS CARDS
+    =============================== */
+
+    .status-row{
+        display:grid;
+        grid-template-columns:repeat(3,1fr);
+        gap:6px;
+        margin-bottom:7px;
+    }
+
+    .status-card{
+        min-height:45px;
+        padding:7px 8px;
+        border-radius:11px;
+    }
+
+    .status-title{
+        font-size:7px;
+        letter-spacing:1px;
+    }
+
+    .status-value{
+        font-size:10px;
+        margin-top:4px;
+    }
+
+    .status-dot{
+        width:6px;
+        height:6px;
+        min-width:6px;
+    }
+
+
+    /* ===============================
+       AI CORE
+    =============================== */
+
+    .ai-core{
+        padding:4px 0 7px;
+    }
+
+    .core-rings{
+        width:185px;
+        height:185px;
+        margin:0 auto;
+    }
+
+    .robot{
+        width:86px;
+        height:70px;
+    }
+
+    .robot-eye{
+        width:13px;
+        height:13px;
+    }
+
+    .robot-mouth{
+        width:25px;
+        height:10px;
+    }
+
+    .robot-antenna{
+        width:8px;
+        height:18px;
+    }
+
+    .core-name{
+        font-size:18px;
+        letter-spacing:4px;
+        margin-top:1px;
+    }
+
+    .core-type{
+        font-size:7px;
+        letter-spacing:2px;
+    }
+
+    .system-online{
+        display:inline-flex;
+        margin-top:5px;
+        padding:4px 12px;
+        font-size:7px;
+        border-radius:20px;
+    }
+
+
+    /* ===============================
+       DASHBOARD
+    =============================== */
+
+    .dashboard{
+        display:block;
+        width:100%;
+    }
+
+
+    /* Hide desktop side panels
+       on mobile */
+
+    .dashboard > .side-panel{
+        display:none;
+    }
+
+
+    /* ===============================
+       CENTER CHAT
+    =============================== */
+
+    .center-panel{
+        width:100%;
+        max-width:100%;
+        margin:0;
+    }
+
+    .chat-box{
+        width:100%;
+        padding:10px;
+        border-radius:17px;
+        box-sizing:border-box;
+    }
+
+    .chat-header{
+        font-size:10px;
+        height:22px;
+        margin-bottom:6px;
+    }
+
+    .chat-header small{
+        font-size:7px;
+    }
+
+
+    /* ===============================
+       MESSAGE AREA
+    =============================== */
+
+    .messages{
+        height:82px;
+        min-height:82px;
+        max-height:82px;
+        padding:8px;
+        overflow-y:auto;
+        border-radius:11px;
+        margin-bottom:6px;
+    }
+
+    .message{
+        font-size:9px;
+        line-height:1.45;
+        padding:7px 8px;
+        border-radius:9px;
+    }
+
+
+    /* ===============================
+       INPUT
+    =============================== */
+
+    .input-area{
+        display:flex;
+        gap:6px;
+        align-items:center;
+    }
+
+    #userInput{
+        min-height:39px;
+        height:39px;
+        max-height:70px;
+        padding:9px 10px;
+        font-size:11px;
+        border-radius:10px;
+        resize:none;
+        box-sizing:border-box;
+    }
+
+    .send-btn{
+        width:42px;
+        height:39px;
+        min-width:42px;
+        border-radius:10px;
+        font-size:18px;
+    }
+
+
+    /* ===============================
+       QUICK BUTTONS
+    =============================== */
 
     .quick-tools{
-
-        grid-template-columns:1fr;
-
+        display:grid;
+        grid-template-columns:repeat(4,1fr);
+        gap:5px;
+        margin-top:6px;
     }
+
+    .quick-btn{
+        min-height:30px;
+        padding:4px 2px;
+        font-size:7px;
+        border-radius:8px;
+        white-space:nowrap;
+    }
+
+
+    /* ===============================
+       ACTION BUTTONS
+    =============================== */
+
+    .action-buttons{
+        display:grid;
+        grid-template-columns:repeat(3,1fr);
+        gap:5px;
+        margin-top:6px;
+    }
+
+    .action-btn{
+        min-height:34px;
+        padding:4px 2px;
+        font-size:8px;
+        border-radius:9px;
+        white-space:nowrap;
+    }
+
+
+    /* ===============================
+       EXTRA BUTTONS
+    =============================== */
+
+    .extra-tools{
+        display:grid;
+        grid-template-columns:repeat(3,1fr);
+        gap:5px;
+        margin-top:5px;
+    }
+
+    .extra-tools button{
+        min-height:30px;
+        padding:4px;
+        font-size:8px;
+        border-radius:8px;
+    }
+
+
+    /* ===============================
+       FOOTER
+    =============================== */
+
+    .footer{
+        margin-top:8px;
+        padding:5px;
+        font-size:6px;
+        line-height:1.5;
+        letter-spacing:1.5px;
+    }
+
+
+    /* ===============================
+       MODALS
+    =============================== */
+
+    .modal{
+        padding:12px;
+        box-sizing:border-box;
+    }
+
+    .modal-box{
+        width:100%;
+        max-width:380px;
+        max-height:85vh;
+        overflow-y:auto;
+        padding:14px;
+        border-radius:16px;
+        box-sizing:border-box;
+    }
+
+    .modal-header h2{
+        font-size:15px;
+    }
+
+    .setting label{
+        font-size:10px;
+    }
+
+    .setting input,
+    .setting select{
+        font-size:11px;
+        min-height:38px;
+    }
+
+    .save-btn{
+        min-height:40px;
+        font-size:10px;
+    }
+
+       }
 
 
     .status-row{
