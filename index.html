@@ -15,11 +15,13 @@
         content="#020609"
     >
 
-    <title>
-        GURU AI • SWITY
-    </title>
+    <meta
+        name="description"
+        content="GURU AI SWITY - Intelligent AI Assistant by GurukrupaTech"
+    >
 
-    <!-- CSS -->
+    <title>GURU AI • SWITY</title>
+
     <link
         rel="stylesheet"
         href="style.css"
@@ -31,30 +33,30 @@
 <body>
 
 
-<!-- =========================================
+<!-- =====================================================
      MAIN APP
-========================================= -->
+===================================================== -->
 
 <div class="app">
 
 
-    <!-- =====================================
-         TOP HEADER
-    ====================================== -->
+    <!-- =================================================
+         HEADER
+    ================================================== -->
 
     <header class="topbar">
 
-        <!-- MENU -->
+
         <button
             class="icon-btn"
             id="menuBtn"
             type="button"
+            aria-label="Menu"
         >
             ☰
         </button>
 
 
-        <!-- BRAND -->
         <div class="brand">
 
             <div class="brand-company">
@@ -76,22 +78,23 @@
         </div>
 
 
-        <!-- SETTINGS -->
         <button
             class="icon-btn"
             id="settingsBtn"
             type="button"
+            aria-label="Settings"
         >
             ⚙
         </button>
+
 
     </header>
 
 
 
-    <!-- =====================================
-         STATUS CARDS
-    ====================================== -->
+    <!-- =================================================
+         STATUS
+    ================================================== -->
 
     <section class="status-row">
 
@@ -113,7 +116,6 @@
         </div>
 
 
-
         <div class="status-card">
 
             <span class="status-title">
@@ -129,7 +131,6 @@
             </div>
 
         </div>
-
 
 
         <div class="status-card">
@@ -158,9 +159,9 @@
 
 
 
-    <!-- =====================================
+    <!-- =================================================
          AI CORE
-    ====================================== -->
+    ================================================== -->
 
     <section class="ai-core">
 
@@ -168,20 +169,19 @@
         <div class="core-rings">
 
 
-            <!-- ROBOT -->
             <div class="robot">
 
+                <div
+                    class="robot-eye eye-left"
+                ></div>
 
-                <div class="robot-eye eye-left"></div>
-
-                <div class="robot-eye eye-right"></div>
-
+                <div
+                    class="robot-eye eye-right"
+                ></div>
 
                 <div class="robot-mouth"></div>
 
-
                 <div class="robot-antenna"></div>
-
 
             </div>
 
@@ -212,16 +212,16 @@
 
 
 
-    <!-- =====================================
+    <!-- =================================================
          DASHBOARD
-    ====================================== -->
+    ================================================== -->
 
     <section class="dashboard">
 
 
-        <!-- =================================
-             LEFT PANEL
-        ================================== -->
+        <!-- =================================================
+             LEFT
+        ================================================== -->
 
         <aside class="side-panel">
 
@@ -235,23 +235,16 @@
                 <div class="system-log">
 
                     ▸ initialize_system.exe<br>
-
                     ▸ gurukrupatech_core<br>
-
                     ▸ guru_ai_assistant<br>
-
                     ▸ swity_online<br>
-
                     ▸ voice_module_ready<br>
-
                     ▸ secure_connection<br>
-
                     ▸ response_engine_active
 
                 </div>
 
             </div>
-
 
 
             <div class="glass-panel">
@@ -263,15 +256,14 @@
                 <div class="system-log">
 
                     ▸ data packets: 072A<br>
-
                     ▸ bandwidth: stable<br>
-
-                    ▸ processing: 98.7%<br>
-
+                    ▸ processing:
+                    <span id="processingValue">
+                        98.7%
+                    </span>
+                    <br>
                     ▸ memory: optimal<br>
-
                     ▸ security: active<br>
-
                     ▸ system: ready
 
                 </div>
@@ -283,17 +275,18 @@
 
 
 
-        <!-- =================================
-             CENTER AI CHAT
-        ================================== -->
+        <!-- =================================================
+             CENTER
+        ================================================== -->
 
-        <main class="center-panel">
+        <main
+            class="center-panel"
+            id="chatSection"
+        >
 
 
             <div class="chat-box">
 
-
-                <!-- CHAT HEADER -->
 
                 <div class="chat-header">
 
@@ -311,7 +304,9 @@
 
 
 
-                <!-- MESSAGES -->
+                <!-- =================================================
+                     MESSAGES
+                ================================================== -->
 
                 <div
                     class="messages"
@@ -321,10 +316,17 @@
 
                     <div class="message ai-message">
 
-                        Hello Boss. Welcome back.<br>
+                        Hello! Main Swity hoon.
+                        Aaj main aapki kya sahayata kar sakti hoon?
 
-                        I'm Swity, your personal AI
-                        assistant.
+                        <br><br>
+
+                        Hello Boss! I'm Swity AI by
+                        GurukrupaTech. Your intelligent
+                        AI companion for Trading, Coding,
+                        Technology, Learning, Creativity,
+                        and Smart Solutions. How may I
+                        assist you today?
 
                     </div>
 
@@ -332,8 +334,18 @@
                 </div>
 
 
+                <div
+                    class="typing"
+                    id="typing"
+                >
+                    Swity is thinking...
+                </div>
 
-                <!-- INPUT -->
+
+
+                <!-- =================================================
+                     INPUT
+                ================================================== -->
 
                 <div class="input-area">
 
@@ -342,6 +354,7 @@
                         id="userInput"
                         placeholder="Ask Swity anything..."
                         rows="2"
+                        autocomplete="off"
                     ></textarea>
 
 
@@ -349,10 +362,9 @@
                         id="sendBtn"
                         class="send-btn"
                         type="button"
+                        aria-label="Send"
                     >
-
                         ➤
-
                     </button>
 
 
@@ -360,13 +372,16 @@
 
 
 
-                <!-- QUICK TOOLS -->
+                <!-- =================================================
+                     QUICK TOOLS
+                ================================================== -->
 
                 <div class="quick-tools">
 
 
                     <button
                         class="quick-btn"
+                        type="button"
                         data-question="Explain trading risk management simply"
                     >
                         📊 Risk
@@ -375,6 +390,7 @@
 
                     <button
                         class="quick-btn"
+                        type="button"
                         data-question="Give me a trading learning roadmap"
                     >
                         📈 Trading
@@ -383,6 +399,7 @@
 
                     <button
                         class="quick-btn"
+                        type="button"
                         data-question="Help me build a website"
                     >
                         💻 Web
@@ -391,6 +408,7 @@
 
                     <button
                         class="quick-btn"
+                        type="button"
                         data-question="Calculate position size"
                     >
                         🧮 Calculator
@@ -401,7 +419,9 @@
 
 
 
-                <!-- ACTION BUTTONS -->
+                <!-- =================================================
+                     ACTION BUTTONS
+                ================================================== -->
 
                 <div class="action-buttons">
 
@@ -437,7 +457,9 @@
 
 
 
-                <!-- EXTRA TOOLS -->
+                <!-- =================================================
+                     EXTRA
+                ================================================== -->
 
                 <div class="extra-tools">
 
@@ -476,9 +498,9 @@
 
 
 
-        <!-- =================================
-             RIGHT PANEL
-        ================================== -->
+        <!-- =================================================
+             RIGHT
+        ================================================== -->
 
         <aside class="side-panel">
 
@@ -505,14 +527,12 @@
                     integrity verified
                 </p>
 
-
                 <div
                     class="chart"
                     id="dataChart"
                 ></div>
 
             </div>
-
 
 
             <div class="glass-panel">
@@ -522,13 +542,10 @@
                 </h3>
 
                 <div class="network-status">
-
                     ● SECURE
-
                 </div>
 
             </div>
-
 
 
             <div class="glass-panel">
@@ -537,15 +554,12 @@
                     SIGNAL STRENGTH
                 </h3>
 
-
                 <div
                     class="chart"
                     id="signalChart"
                 ></div>
 
-
             </div>
-
 
 
             <div class="glass-panel">
@@ -557,9 +571,7 @@
                 <div class="encryption">
 
                     🔒 AES-256<br>
-
                     Secure Session<br>
-
                     Protected Channel
 
                 </div>
@@ -574,9 +586,9 @@
 
 
 
-    <!-- =====================================
+    <!-- =================================================
          FOOTER
-    ====================================== -->
+    ================================================== -->
 
     <footer class="footer">
 
@@ -586,6 +598,10 @@
 
         GURUKRUPATECH
 
+        <br>
+
+        CREATE BY SHIV SONUNE
+
     </footer>
 
 
@@ -593,13 +609,14 @@
 
 
 
-<!-- =========================================
+<!-- =====================================================
      SETTINGS MODAL
-========================================= -->
+===================================================== -->
 
 <div
     class="modal"
     id="settingsModal"
+    aria-hidden="true"
 >
 
 
@@ -616,6 +633,7 @@
             <button
                 id="closeSettings"
                 type="button"
+                aria-label="Close"
             >
                 ×
             </button>
@@ -624,19 +642,49 @@
 
 
 
-        <!-- VOICE -->
+        <!-- =================================================
+             LANGUAGE
+        ================================================== -->
 
         <div class="setting">
 
-            <label>
-                Voice
+            <label for="languageSelect">
+                🌐 Assistant Language
             </label>
 
-            <select
-                id="voiceSelect"
-            >
+            <select id="languageSelect">
 
-                <option>
+                <option value="mr-IN">
+                    🇮🇳 मराठी • Marathi
+                </option>
+
+                <option value="hi-IN">
+                    🇮🇳 हिंदी • Hindi
+                </option>
+
+                <option value="en-US">
+                    🇬🇧 English
+                </option>
+
+            </select>
+
+        </div>
+
+
+
+        <!-- =================================================
+             VOICE
+        ================================================== -->
+
+        <div class="setting">
+
+            <label for="voiceSelect">
+                🎙 AI Voice
+            </label>
+
+            <select id="voiceSelect">
+
+                <option value="">
                     Loading voices...
                 </option>
 
@@ -646,12 +694,14 @@
 
 
 
-        <!-- SPEED -->
+        <!-- =================================================
+             SPEED
+        ================================================== -->
 
         <div class="setting">
 
-            <label>
-                Voice Speed
+            <label for="voiceRate">
+                🔊 Voice Speed
             </label>
 
             <input
@@ -667,12 +717,14 @@
 
 
 
-        <!-- PITCH -->
+        <!-- =================================================
+             PITCH
+        ================================================== -->
 
         <div class="setting">
 
-            <label>
-                Voice Pitch
+            <label for="voicePitch">
+                🎵 Voice Pitch
             </label>
 
             <input
@@ -688,29 +740,44 @@
 
 
 
-        <!-- API ENDPOINT -->
+        <!-- =================================================
+             AI BACKEND
+        ================================================== -->
 
         <div class="setting">
 
-            <label>
-                AI Backend Endpoint
+            <label for="apiEndpoint">
+                🤖 AI Backend Endpoint
             </label>
 
             <input
-                type="text"
+                type="url"
                 id="apiEndpoint"
                 placeholder="https://your-server.com/chat"
+                autocomplete="off"
             >
 
         </div>
 
 
+
         <div class="security-note">
 
-            🔐 Never put your private AI API key
-            directly inside this HTML/JS.
+            🔐 Your private AI API key should never
+            be placed directly inside HTML or JavaScript.
 
         </div>
+
+
+
+        <!-- IMPORTANT: THIS BUTTON WAS MISSING -->
+        <button
+            id="saveSettings"
+            class="save-btn"
+            type="button"
+        >
+            SAVE SETTINGS
+        </button>
 
 
     </div>
@@ -719,13 +786,14 @@
 
 
 
-<!-- =========================================
+<!-- =====================================================
      NOTES MODAL
-========================================= -->
+===================================================== -->
 
 <div
     class="modal"
     id="notesModal"
+    aria-hidden="true"
 >
 
 
@@ -742,6 +810,7 @@
             <button
                 id="closeNotes"
                 type="button"
+                aria-label="Close"
             >
                 ×
             </button>
@@ -771,9 +840,9 @@
 
 
 
-<!-- =========================================
+<!-- =====================================================
      JAVASCRIPT
-========================================= -->
+===================================================== -->
 
 <script src="script.js"></script>
 
